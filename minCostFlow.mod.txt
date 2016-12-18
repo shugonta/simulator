@@ -1,0 +1,24 @@
+/* Minimum-cost flow problem */
+
+param N integer, > 0; /* # nodes */
+
+set V := 1..N;
+set E within {V, V};
+
+param c{E}; /* cost of edge */
+param u{E}; /* capacity of edge */
+param b{V}; /* supply (positive number) or demand (negative number) */
+
+/* decision variables */
+var x{E}, >= 0;
+
+/* Objective function */
+minimize z: sum{i in V} ( sum{j in V} (c[i, j] * x[i, j]) );
+
+s.t. INTERNAL{i in V}:
+     sum{j in V} (x[i, j]) - sum{j in V} (x[j, i]) = b[i];
+
+s.t. CAPACITY{i in V, j in V}:
+     x[i, j] <= u[i, j];
+end;
+
