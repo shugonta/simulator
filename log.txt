@@ -1,540 +1,2062 @@
 
 Simulation Time: 0
-[Accepted(0)] 3->1 (1, 1.000000)
-Link 3->5 remove bandwidth: 2
-Link 5->1 remove bandwidth: 2
-[Accepted(1)] 2->1 (4, 1.000000)
-Link 2->1 remove bandwidth: 5
-[Accepted(2)] 3->4 (3, 1.000000)
-Link 3->4 remove bandwidth: 4
-[Accepted(3)] 2->5 (4, 1.000000)
-Link 2->5 remove bandwidth: 5
-[Accepted(4)] 2->5 (3, 1.000000)
-Link 2->5 remove bandwidth: 4
-[Accepted(5)] 2->5 (4, 1.000000)
-Link 2->5 remove bandwidth: 1
-Link 2->3 remove bandwidth: 4
-Link 3->5 remove bandwidth: 4
-[Accepted(6)] 3->4 (3, 1.000000)
-Link 3->4 remove bandwidth: 2
-Link 3->5 remove bandwidth: 3
-Link 5->4 remove bandwidth: 3
-[Accepted(7)] 3->5 (3, 1.000000)
-Link 3->4 remove bandwidth: 3
-Link 4->5 remove bandwidth: 3
+[Link failed] 1->4
+1 2 300
+1 5 300
+2 1 300
+2 3 300
+2 5 300
+3 2 300
+3 4 300
+3 5 300
+4 1 300
+4 3 300
+4 5 300
+5 1 300
+5 2 300
+5 3 300
+5 4 300
+[Accepted(0)] 1->5 (20, 1.000000)
+Link 1->5 remove bandwidth: 21
+[Accepted(1)] 4->5 (20, 1.000000)
+Link 4->5 remove bandwidth: 21
+[Accepted(2)] 5->3 (10, 1.000000)
+Link 5->3 remove bandwidth: 3
+Link 5->3 remove bandwidth: 8
+[Accepted(3)] 5->3 (10, 1.000000)
+Link 5->3 remove bandwidth: 3
+Link 5->3 remove bandwidth: 8
+[Accepted(4)] 2->1 (20, 1.000000)
+Link 2->1 remove bandwidth: 21
+[Accepted(5)] 2->4 (40, 1.000000)
+Link 2->5 remove bandwidth: 42
+Link 5->4 remove bandwidth: 42
+[Accepted(6)] 5->3 (20, 1.000000)
+Link 5->3 remove bandwidth: 21
+[Accepted(7)] 4->2 (30, 1.000000)
+Link 4->5 remove bandwidth: 31
+Link 5->2 remove bandwidth: 31
+[Accepted(8)] 4->5 (40, 1.000000)
+Link 4->5 remove bandwidth: 41
+[Accepted(9)] 1->2 (40, 1.000000)
+Link 1->2 remove bandwidth: 41
+[Accepted(10)] 3->2 (10, 1.000000)
+Link 3->2 remove bandwidth: 10
 Link 3->5 remove bandwidth: 1
-[Accepted(8)] 2->3 (3, 1.000000)
-Link 2->3 remove bandwidth: 4
+Link 5->2 remove bandwidth: 1
+[Accepted(11)] 1->4 (30, 1.000000)
+Link 1->5 remove bandwidth: 33
+Link 5->4 remove bandwidth: 33
+[Accepted(12)] 4->2 (20, 1.000000)
+Link 4->5 remove bandwidth: 21
+Link 5->2 remove bandwidth: 21
+[Accepted(13)] 2->5 (40, 1.000000)
+Link 2->5 remove bandwidth: 42
+[Accepted(14)] 1->3 (40, 1.000000)
+Link 1->5 remove bandwidth: 41
+Link 5->3 remove bandwidth: 41
+[Accepted(15)] 2->1 (30, 1.000000)
+Link 2->1 remove bandwidth: 31
+[Accepted(16)] 1->2 (30, 1.000000)
+Link 1->2 remove bandwidth: 31
+[Accepted(17)] 1->2 (20, 1.000000)
+Link 1->2 remove bandwidth: 21
+[Accepted(18)] 1->3 (40, 1.000000)
+Link 1->5 remove bandwidth: 42
+Link 5->3 remove bandwidth: 42
+[Accepted(19)] 3->5 (10, 1.000000)
+Link 3->5 remove bandwidth: 11
+[Accepted(20)] 4->3 (20, 1.000000)
+Link 4->5 remove bandwidth: 21
+Link 5->3 remove bandwidth: 21
+[Accepted(21)] 5->4 (30, 1.000000)
+Link 5->4 remove bandwidth: 31
+[Accepted(22)] 3->4 (30, 1.000000)
+Link 3->4 remove bandwidth: 31
 
 Simulation Time: 1
-Link 4->3 failed
-Link 3->4 add bandwidth: 3
-Link 4->5 add bandwidth: 3
-Link 3->5 add bandwidth: 1
-[Accepted(9)] 4->1 (3, 1.000000)
-Link 4->1 remove bandwidth: 4
-[Accepted(10)] 1->3 (3, 1.000000)
-Link 1->5 remove bandwidth: 4
-Link 5->3 remove bandwidth: 4
-[Accepted(11)] 3->1 (4, 1.000000)
-Link 3->5 remove bandwidth: 1
-Link 5->1 remove bandwidth: 1
-Link 3->4 remove bandwidth: 4
-Link 4->1 remove bandwidth: 4
-[Accepted(12)] 2->3 (2, 1.000000)
-Link 2->3 remove bandwidth: 2
-Link 1->5 remove bandwidth: 1
-Link 2->1 remove bandwidth: 1
+[Link failed] 2->5
+Link 2->5 add bandwidth: 42
+Link 5->4 add bandwidth: 42
+[Bandwidth Lowering(5)] 2->4 (40, 1.000000)->0
+Link 2->5 add bandwidth: 42
+[Bandwidth Lowering(13)] 2->5 (40, 1.000000)->0
+[End(1)] 4->5 (20, 1.000000), 1
+Link 4->5 add bandwidth: 21
+[End(4)] 2->1 (20, 1.000000), 1
+Link 2->1 add bandwidth: 21
+[End(7)] 4->2 (30, 1.000000), 1
+Link 4->5 add bandwidth: 31
+Link 5->2 add bandwidth: 31
+[End(8)] 4->5 (40, 1.000000), 1
+Link 4->5 add bandwidth: 41
+[End(14)] 1->3 (40, 1.000000), 1
+Link 1->5 add bandwidth: 41
+Link 5->3 add bandwidth: 41
+[End(17)] 1->2 (20, 1.000000), 1
+Link 1->2 add bandwidth: 21
+[End(19)] 3->5 (10, 1.000000), 1
+Link 3->5 add bandwidth: 11
+[End(21)] 5->4 (30, 1.000000), 1
+Link 5->4 add bandwidth: 31
+1 2 228
+1 5 204
+2 1 269
+2 3 300
+3 2 290
+3 4 269
+3 5 299
+4 1 300
+4 3 300
+4 5 258
+5 1 300
+5 2 278
+5 3 194
+5 4 267
+[Accepted(23)] 4->3 (20, 1.000000)
+Link 4->5 remove bandwidth: 21
+Link 5->3 remove bandwidth: 21
+[Accepted(24)] 5->3 (20, 1.000000)
+Link 5->3 remove bandwidth: 20
 Link 5->3 remove bandwidth: 1
-[Accepted(13)] 1->5 (4, 1.000000)
-Link 1->5 remove bandwidth: 5
-[Accepted(14)] 1->3 (1, 1.000000)
-Link 1->4 remove bandwidth: 2
-Link 4->5 remove bandwidth: 2
-Link 5->3 remove bandwidth: 2
-[Accepted(15)] 1->2 (4, 1.000000)
-Link 1->2 remove bandwidth: 5
-[Accepted(16)] 3->4 (1, 1.000000)
-Link 1->4 remove bandwidth: 2
-Link 2->1 remove bandwidth: 2
-Link 3->2 remove bandwidth: 2
-[Blocked(17)] 3->1 (4, 1.000000)
-[Accepted(18)] 5->1 (4, 1.000000)
-Link 5->1 remove bandwidth: 5
-[Accepted(19)] 2->5 (1, 1.000000)
-Link 1->4 remove bandwidth: 2
-Link 2->1 remove bandwidth: 2
-Link 4->5 remove bandwidth: 2
-[Accepted(20)] 5->1 (2, 1.000000)
-Link 4->1 remove bandwidth: 1
-Link 5->4 remove bandwidth: 1
-Link 5->1 remove bandwidth: 2
+[Accepted(25)] 5->4 (30, 1.000000)
+Link 5->4 remove bandwidth: 31
+[Accepted(26)] 1->2 (20, 1.000000)
+Link 1->2 remove bandwidth: 21
+[Accepted(27)] 1->5 (20, 1.000000)
+Link 1->5 remove bandwidth: 21
+[Accepted(28)] 3->5 (20, 1.000000)
+Link 3->5 remove bandwidth: 21
+[Accepted(29)] 3->4 (20, 1.000000)
+Link 3->4 remove bandwidth: 8
+Link 3->5 remove bandwidth: 13
+Link 5->4 remove bandwidth: 13
+[Accepted(30)] 5->1 (20, 1.000000)
+Link 5->1 remove bandwidth: 21
+[Accepted(31)] 3->2 (10, 1.000000)
+Link 3->2 remove bandwidth: 11
+[Accepted(32)] 4->1 (10, 1.000000)
+Link 4->1 remove bandwidth: 10
+Link 4->5 remove bandwidth: 1
+Link 5->1 remove bandwidth: 1
 
 Simulation Time: 2
-Link 3->5 add bandwidth: 2
-Link 5->1 add bandwidth: 2
-Link 1->4 add bandwidth: 2
-Link 4->5 add bandwidth: 2
-Link 5->3 add bandwidth: 2
-Link 1->2 add bandwidth: 5
-Link 4->1 add bandwidth: 1
-Link 5->4 add bandwidth: 1
-Link 5->1 add bandwidth: 2
-[Accepted(21)] 1->5 (2, 1.000000)
-Link 1->4 remove bandwidth: 3
-Link 4->5 remove bandwidth: 3
-[Accepted(22)] 4->2 (3, 1.000000)
-Link 4->5 remove bandwidth: 4
-Link 5->2 remove bandwidth: 4
-[Blocked(23)] 2->3 (2, 1.000000)
-[Blocked(24)] 2->4 (1, 1.000000)
-[Blocked(25)] 4->5 (2, 1.000000)
-[Blocked(26)] 2->1 (4, 1.000000)
-[Accepted(27)] 1->2 (1, 1.000000)
-Link 1->2 remove bandwidth: 2
-[Blocked(28)] 1->5 (1, 1.000000)
-[Accepted(29)] 5->3 (1, 1.000000)
-Link 5->3 remove bandwidth: 2
-[Accepted(30)] 1->4 (2, 1.000000)
-Link 1->4 remove bandwidth: 3
-[Accepted(31)] 1->2 (1, 1.000000)
-Link 1->2 remove bandwidth: 2
-[Accepted(32)] 5->1 (1, 1.000000)
-Link 5->1 remove bandwidth: 2
-[Blocked(33)] 2->1 (3, 1.000000)
+[End(0)] 1->5 (20, 1.000000), 2
+Link 1->5 add bandwidth: 21
+[End(2)] 5->3 (10, 1.000000), 2
+Link 5->3 add bandwidth: 3
+Link 5->3 add bandwidth: 8
+[End(3)] 5->3 (10, 1.000000), 2
+Link 5->3 add bandwidth: 3
+Link 5->3 add bandwidth: 8
+[End(5)] 2->4 (40, 1.000000), 2
+[End(9)] 1->2 (40, 1.000000), 2
+Link 1->2 add bandwidth: 41
+[End(10)] 3->2 (10, 1.000000), 2
+Link 3->2 add bandwidth: 10
+Link 3->5 add bandwidth: 1
+Link 5->2 add bandwidth: 1
+[End(12)] 4->2 (20, 1.000000), 2
+Link 4->5 add bandwidth: 21
+Link 5->2 add bandwidth: 21
+[End(15)] 2->1 (30, 1.000000), 2
+Link 2->1 add bandwidth: 31
+[End(20)] 4->3 (20, 1.000000), 2
+Link 4->5 add bandwidth: 21
+Link 5->3 add bandwidth: 21
+[End(24)] 5->3 (20, 1.000000), 2
+Link 5->3 add bandwidth: 20
+Link 5->3 add bandwidth: 1
+[End(25)] 5->4 (30, 1.000000), 2
+Link 5->4 add bandwidth: 31
+[End(26)] 1->2 (20, 1.000000), 2
+Link 1->2 add bandwidth: 21
+[End(28)] 3->5 (20, 1.000000), 2
+Link 3->5 add bandwidth: 21
+[End(31)] 3->2 (10, 1.000000), 2
+Link 3->2 add bandwidth: 11
+1 2 269
+1 5 204
+2 1 300
+2 3 300
+3 2 300
+3 4 261
+3 5 287
+4 1 290
+4 3 300
+4 5 278
+5 1 278
+5 2 300
+5 3 216
+5 4 254
+[Accepted(33)] 3->4 (30, 1.000000)
+Link 3->4 remove bandwidth: 31
+[Accepted(34)] 5->3 (10, 1.000000)
+Link 5->3 remove bandwidth: 3
+Link 5->3 remove bandwidth: 8
+[Accepted(35)] 5->2 (10, 1.000000)
+Link 5->2 remove bandwidth: 11
+[Accepted(36)] 4->5 (40, 1.000000)
+Link 4->5 remove bandwidth: 41
+[Accepted(37)] 3->2 (40, 1.000000)
+Link 3->2 remove bandwidth: 41
+[Accepted(38)] 1->5 (40, 1.000000)
+Link 1->5 remove bandwidth: 42
+[Accepted(39)] 1->5 (30, 1.000000)
+Link 1->5 remove bandwidth: 31
+[Accepted(40)] 5->4 (40, 1.000000)
+Link 5->4 remove bandwidth: 41
+[Accepted(41)] 5->2 (10, 1.000000)
+Link 5->2 remove bandwidth: 11
+[Accepted(42)] 1->2 (40, 1.000000)
+Link 1->2 remove bandwidth: 41
+[Accepted(43)] 5->3 (10, 1.000000)
+Link 5->3 remove bandwidth: 10
+Link 5->3 remove bandwidth: 1
 
 Simulation Time: 3
-Link 2->1 add bandwidth: 5
-Link 2->5 add bandwidth: 4
-Link 2->3 add bandwidth: 4
-Link 1->5 add bandwidth: 4
-Link 5->3 add bandwidth: 4
-Link 1->5 add bandwidth: 5
-Link 1->4 add bandwidth: 2
-Link 4->5 add bandwidth: 2
-Link 5->3 add bandwidth: 2
-Link 1->4 add bandwidth: 2
-Link 2->1 add bandwidth: 2
-Link 3->2 add bandwidth: 2
-Link 4->1 add bandwidth: 1
-Link 5->4 add bandwidth: 1
-Link 5->1 add bandwidth: 2
-Link 1->2 add bandwidth: 2
-Link 5->3 add bandwidth: 2
-[Accepted(34)] 2->3 (3, 1.000000)
-Link 2->3 remove bandwidth: 3
-Link 2->5 remove bandwidth: 1
-Link 5->3 remove bandwidth: 1
-[Accepted(35)] 1->5 (4, 1.000000)
-Link 1->5 remove bandwidth: 5
-[Accepted(36)] 5->3 (1, 1.000000)
-Link 5->3 remove bandwidth: 2
-[Accepted(37)] 1->4 (2, 1.000000)
-Link 1->4 remove bandwidth: 3
-[Accepted(38)] 5->2 (4, 1.000000)
-Link 5->2 remove bandwidth: 5
-[Accepted(39)] 5->2 (4, 1.000000)
-Link 5->2 remove bandwidth: 1
-Link 3->2 remove bandwidth: 4
-Link 5->3 remove bandwidth: 4
+[End(16)] 1->2 (30, 1.000000), 3
+Link 1->2 add bandwidth: 31
+[End(18)] 1->3 (40, 1.000000), 3
+Link 1->5 add bandwidth: 42
+Link 5->3 add bandwidth: 42
+[End(22)] 3->4 (30, 1.000000), 3
+Link 3->4 add bandwidth: 31
+[End(23)] 4->3 (20, 1.000000), 3
+Link 4->5 add bandwidth: 21
+Link 5->3 add bandwidth: 21
+[End(29)] 3->4 (20, 1.000000), 3
+Link 3->4 add bandwidth: 8
+Link 3->5 add bandwidth: 13
+Link 5->4 add bandwidth: 13
+[End(32)] 4->1 (10, 1.000000), 3
+Link 4->1 add bandwidth: 10
+Link 4->5 add bandwidth: 1
+Link 5->1 add bandwidth: 1
+[End(39)] 1->5 (30, 1.000000), 3
+Link 1->5 add bandwidth: 31
+[End(40)] 5->4 (40, 1.000000), 3
+Link 5->4 add bandwidth: 41
+[End(41)] 5->2 (10, 1.000000), 3
+Link 5->2 add bandwidth: 11
+[End(42)] 1->2 (40, 1.000000), 3
+Link 1->2 add bandwidth: 41
+[End(43)] 5->3 (10, 1.000000), 3
+Link 5->3 add bandwidth: 10
+Link 5->3 add bandwidth: 1
+1 2 300
+1 5 204
+2 1 300
+2 3 300
+3 2 259
+3 4 269
+3 5 300
+4 1 300
+4 3 300
+4 5 259
+5 1 279
+5 2 289
+5 3 268
+5 4 267
+[Accepted(44)] 2->3 (40, 1.000000)
+Link 2->3 remove bandwidth: 41
+[Accepted(45)] 4->5 (10, 1.000000)
+Link 4->5 remove bandwidth: 11
+[Accepted(46)] 1->3 (20, 1.000000)
+Link 1->5 remove bandwidth: 21
+Link 5->3 remove bandwidth: 21
+[Accepted(47)] 3->1 (30, 1.000000)
+Link 3->5 remove bandwidth: 31
+Link 5->1 remove bandwidth: 31
+[Accepted(48)] 4->3 (30, 1.000000)
+Link 4->5 remove bandwidth: 31
+Link 5->3 remove bandwidth: 31
+[Accepted(49)] 1->2 (40, 1.000000)
+Link 1->2 remove bandwidth: 41
+[Accepted(50)] 2->5 (10, 1.000000)
+Link 2->3 remove bandwidth: 11
+Link 3->5 remove bandwidth: 11
+[Accepted(51)] 3->4 (20, 1.000000)
+Link 3->4 remove bandwidth: 21
+[Accepted(52)] 2->3 (40, 1.000000)
+Link 2->3 remove bandwidth: 41
+[Accepted(53)] 2->1 (10, 1.000000)
+Link 2->1 remove bandwidth: 11
+[Accepted(54)] 3->2 (10, 1.000000)
+Link 3->2 remove bandwidth: 11
+[Accepted(55)] 1->4 (30, 1.000000)
+Link 1->5 remove bandwidth: 31
+Link 5->4 remove bandwidth: 31
+[Accepted(56)] 4->5 (20, 1.000000)
+Link 4->5 remove bandwidth: 21
+[Accepted(57)] 3->4 (20, 1.000000)
+Link 3->4 remove bandwidth: 8
+Link 3->5 remove bandwidth: 13
+Link 5->4 remove bandwidth: 13
 
 Simulation Time: 4
-Link 2->5 add bandwidth: 4
-Link 2->3 add bandwidth: 4
-Link 1->4 add bandwidth: 2
-Link 4->5 add bandwidth: 2
-Link 5->3 add bandwidth: 2
-Link 1->4 add bandwidth: 2
-Link 2->1 add bandwidth: 2
-Link 3->2 add bandwidth: 2
-Link 1->2 add bandwidth: 2
-Link 1->4 add bandwidth: 3
-[Accepted(40)] 1->4 (4, 1.000000)
-Link 1->4 remove bandwidth: 5
-[Accepted(41)] 4->1 (3, 1.000000)
-Link 4->5 remove bandwidth: 2
-Link 5->1 remove bandwidth: 2
-Link 4->1 remove bandwidth: 2
-[Accepted(42)] 1->3 (3, 1.000000)
-Link 1->5 remove bandwidth: 4
-Link 5->3 remove bandwidth: 4
-[Accepted(43)] 1->3 (4, 1.000000)
-Link 1->2 remove bandwidth: 5
-Link 2->3 remove bandwidth: 5
+[Link repaired] 2->5
+[End(11)] 1->4 (30, 1.000000), 4
+Link 1->5 add bandwidth: 33
+Link 5->4 add bandwidth: 33
+[End(27)] 1->5 (20, 1.000000), 4
+Link 1->5 add bandwidth: 21
+[End(33)] 3->4 (30, 1.000000), 4
+Link 3->4 add bandwidth: 31
+[End(34)] 5->3 (10, 1.000000), 4
+Link 5->3 add bandwidth: 3
+Link 5->3 add bandwidth: 8
+[End(36)] 4->5 (40, 1.000000), 4
+Link 4->5 add bandwidth: 41
+[End(37)] 3->2 (40, 1.000000), 4
+Link 3->2 add bandwidth: 41
+[End(46)] 1->3 (20, 1.000000), 4
+Link 1->5 add bandwidth: 21
+Link 5->3 add bandwidth: 21
+[End(47)] 3->1 (30, 1.000000), 4
+Link 3->5 add bandwidth: 31
+Link 5->1 add bandwidth: 31
+[End(48)] 4->3 (30, 1.000000), 4
+Link 4->5 add bandwidth: 31
+Link 5->3 add bandwidth: 31
+[End(50)] 2->5 (10, 1.000000), 4
+Link 2->3 add bandwidth: 11
+Link 3->5 add bandwidth: 11
+[End(54)] 3->2 (10, 1.000000), 4
+Link 3->2 add bandwidth: 11
+[End(55)] 1->4 (30, 1.000000), 4
+Link 1->5 add bandwidth: 31
+Link 5->4 add bandwidth: 31
+[End(56)] 4->5 (20, 1.000000), 4
+Link 4->5 add bandwidth: 21
+1 2 259
+1 5 258
+2 1 289
+2 3 218
+2 5 300
+3 2 300
+3 4 271
+3 5 287
+4 1 300
+4 3 300
+4 5 289
+5 1 279
+5 2 289
+5 3 279
+5 4 287
+[Accepted(58)] 4->3 (20, 1.000000)
+Link 4->5 remove bandwidth: 21
+Link 5->3 remove bandwidth: 21
+[Accepted(59)] 3->1 (40, 1.000000)
+Link 3->5 remove bandwidth: 42
+Link 5->1 remove bandwidth: 42
+[Accepted(60)] 1->2 (40, 1.000000)
+Link 1->2 remove bandwidth: 41
+[Accepted(61)] 4->5 (40, 1.000000)
+Link 4->5 remove bandwidth: 41
+[Accepted(62)] 4->1 (20, 1.000000)
+Link 4->1 remove bandwidth: 20
+Link 4->5 remove bandwidth: 1
+Link 5->1 remove bandwidth: 1
+[Accepted(63)] 2->1 (20, 1.000000)
+Link 2->1 remove bandwidth: 21
+[Accepted(64)] 3->2 (30, 1.000000)
+Link 3->2 remove bandwidth: 32
+[Accepted(65)] 3->5 (10, 1.000000)
+Link 3->5 remove bandwidth: 11
+[Accepted(66)] 2->5 (20, 1.000000)
+Link 2->5 remove bandwidth: 21
+[Accepted(67)] 2->5 (40, 1.000000)
+Link 2->5 remove bandwidth: 41
 
 Simulation Time: 5
-Link 1->5 failed
-Link 1->5 add bandwidth: 1
-Link 2->1 add bandwidth: 1
-Link 5->3 add bandwidth: 1
-Link 1->5 add bandwidth: 4
-Link 5->3 add bandwidth: 4
-[Bandwidth Lowering(42)] 1->3 (3, 1.000000)->0
-Link 2->3 add bandwidth: 4
-Link 2->3 add bandwidth: 2
-Link 1->4 add bandwidth: 2
-Link 4->5 add bandwidth: 2
-Link 5->3 add bandwidth: 2
-Link 1->4 add bandwidth: 2
-Link 2->1 add bandwidth: 2
-Link 3->2 add bandwidth: 2
-Link 1->4 add bandwidth: 3
-Link 1->4 add bandwidth: 5
-[Accepted(44)] 1->3 (2, 1.000000)
-Link 1->2 remove bandwidth: 3
-Link 2->5 remove bandwidth: 3
-Link 5->3 remove bandwidth: 3
-[Accepted(45)] 1->4 (1, 1.000000)
-Link 1->4 remove bandwidth: 2
-[Accepted(46)] 4->1 (4, 1.000000)
-Link 4->1 remove bandwidth: 1
-Link 4->5 remove bandwidth: 2
-Link 5->1 remove bandwidth: 2
-Link 2->1 remove bandwidth: 2
-Link 3->2 remove bandwidth: 2
-Link 4->5 remove bandwidth: 2
-Link 5->3 remove bandwidth: 2
-[Accepted(47)] 2->3 (2, 1.000000)
-Link 2->3 remove bandwidth: 2
-Link 2->5 remove bandwidth: 1
-Link 5->3 remove bandwidth: 1
-[Accepted(48)] 2->5 (2, 1.000000)
-Link 2->5 remove bandwidth: 3
-[Accepted(49)] 5->1 (2, 1.000000)
-Link 2->1 remove bandwidth: 3
-Link 3->2 remove bandwidth: 3
-Link 5->3 remove bandwidth: 3
-[Accepted(50)] 3->1 (4, 1.000000)
-Link 2->1 remove bandwidth: 5
-Link 3->2 remove bandwidth: 5
+[Link repaired] 1->4
+[Link failed] 3->4
+[Bandwidth Lowering(13)] 2->5 (40, 1.000000)->0
+Link 3->4 add bandwidth: 21
+[Bandwidth Lowering(51)] 3->4 (20, 1.000000)->0
+Link 3->4 add bandwidth: 8
+[Bandwidth Lowering(57)] 3->4 (20, 1.000000)->13
+[End(13)] 2->5 (40, 1.000000), 5
+[End(30)] 5->1 (20, 1.000000), 5
+Link 5->1 add bandwidth: 21
+[End(35)] 5->2 (10, 1.000000), 5
+Link 5->2 add bandwidth: 11
+[End(38)] 1->5 (40, 1.000000), 5
+Link 1->5 add bandwidth: 42
+[End(44)] 2->3 (40, 1.000000), 5
+Link 2->3 add bandwidth: 41
+[End(45)] 4->5 (10, 1.000000), 5
+Link 4->5 add bandwidth: 11
+[End(49)] 1->2 (40, 1.000000), 5
+Link 1->2 add bandwidth: 41
+[End(52)] 2->3 (40, 1.000000), 5
+Link 2->3 add bandwidth: 41
+[End(57)] 3->4 (20, 1.000000), 5
+Link 3->5 add bandwidth: 13
+Link 5->4 add bandwidth: 13
+[End(58)] 4->3 (20, 1.000000), 5
+Link 4->5 add bandwidth: 21
+Link 5->3 add bandwidth: 21
+[End(62)] 4->1 (20, 1.000000), 5
+Link 4->1 add bandwidth: 20
+Link 4->5 add bandwidth: 1
+Link 5->1 add bandwidth: 1
+[End(63)] 2->1 (20, 1.000000), 5
+Link 2->1 add bandwidth: 21
+1 2 259
+1 4 300
+1 5 300
+2 1 289
+2 3 300
+2 5 238
+3 2 268
+3 5 247
+4 1 300
+4 3 300
+4 5 259
+5 1 258
+5 2 300
+5 3 279
+5 4 300
+[Accepted(68)] 5->2 (10, 1.000000)
+Link 5->2 remove bandwidth: 11
+[Accepted(69)] 1->2 (40, 1.000000)
+Link 1->2 remove bandwidth: 41
+[Accepted(70)] 3->2 (10, 1.000000)
+Link 3->2 remove bandwidth: 11
+[Accepted(71)] 2->4 (40, 1.000000)
+Link 2->5 remove bandwidth: 41
+Link 5->4 remove bandwidth: 41
+[Accepted(72)] 2->5 (30, 1.000000)
+Link 2->5 remove bandwidth: 31
+[Accepted(73)] 5->4 (30, 1.000000)
+Link 5->4 remove bandwidth: 31
+[Accepted(74)] 2->4 (10, 1.000000)
+Link 2->5 remove bandwidth: 11
+Link 5->4 remove bandwidth: 11
+[Accepted(75)] 4->3 (10, 1.000000)
+Link 4->5 remove bandwidth: 11
+Link 5->3 remove bandwidth: 11
+[Accepted(76)] 2->5 (20, 1.000000)
+Link 2->5 remove bandwidth: 21
+[Accepted(77)] 5->1 (10, 1.000000)
+Link 5->1 remove bandwidth: 11
+[Accepted(78)] 5->1 (10, 1.000000)
+Link 5->1 remove bandwidth: 11
+[Accepted(79)] 5->2 (40, 1.000000)
+Link 5->2 remove bandwidth: 41
+[Accepted(80)] 3->4 (30, 1.000000)
+Link 3->5 remove bandwidth: 31
+Link 5->4 remove bandwidth: 31
 
 Simulation Time: 6
-Link 3->4 add bandwidth: 4
-Link 3->5 add bandwidth: 1
-Link 5->1 add bandwidth: 1
-Link 3->4 add bandwidth: 4
-Link 4->1 add bandwidth: 4
-Link 2->3 add bandwidth: 2
-Link 1->4 add bandwidth: 2
-Link 2->1 add bandwidth: 2
-Link 3->2 add bandwidth: 2
-Link 1->4 add bandwidth: 3
-Link 1->4 add bandwidth: 5
-[Blocked(51)] 1->5 (3, 1.000000)
-[Accepted(52)] 3->4 (2, 1.000000)
-Link 3->4 remove bandwidth: 3
-[Accepted(53)] 3->4 (3, 1.000000)
-Link 3->4 remove bandwidth: 3
-Link 3->5 remove bandwidth: 1
-Link 5->4 remove bandwidth: 1
-[Blocked(54)] 4->2 (4, 1.000000)
-[Blocked(55)] 5->2 (3, 1.000000)
-[Blocked(56)] 1->2 (4, 1.000000)
-[Accepted(57)] 2->1 (4, 1.000000)
-Link 2->1 remove bandwidth: 5
-Link 2->3 remove bandwidth: 1
-Link 3->5 remove bandwidth: 1
-Link 5->1 remove bandwidth: 1
-[Accepted(58)] 3->4 (2, 1.000000)
-Link 3->4 remove bandwidth: 2
-Link 3->5 remove bandwidth: 1
-Link 5->4 remove bandwidth: 1
-[Blocked(59)] 3->5 (3, 1.000000)
+[End(6)] 5->3 (20, 1.000000), 6
+Link 5->3 add bandwidth: 21
+[End(59)] 3->1 (40, 1.000000), 6
+Link 3->5 add bandwidth: 42
+Link 5->1 add bandwidth: 42
+[End(60)] 1->2 (40, 1.000000), 6
+Link 1->2 add bandwidth: 41
+[End(65)] 3->5 (10, 1.000000), 6
+Link 3->5 add bandwidth: 11
+[End(71)] 2->4 (40, 1.000000), 6
+Link 2->5 add bandwidth: 41
+Link 5->4 add bandwidth: 41
+[End(73)] 5->4 (30, 1.000000), 6
+Link 5->4 add bandwidth: 31
+[End(74)] 2->4 (10, 1.000000), 6
+Link 2->5 add bandwidth: 11
+Link 5->4 add bandwidth: 11
+[End(80)] 3->4 (30, 1.000000), 6
+Link 3->5 add bandwidth: 31
+Link 5->4 add bandwidth: 31
+1 2 259
+1 4 300
+1 5 300
+2 1 289
+2 3 300
+2 5 186
+3 2 257
+3 5 300
+4 1 300
+4 3 300
+4 5 248
+5 1 278
+5 2 248
+5 3 289
+5 4 300
+[Accepted(81)] 3->1 (20, 1.000000)
+Link 3->5 remove bandwidth: 21
+Link 5->1 remove bandwidth: 21
+[Accepted(82)] 1->4 (20, 1.000000)
+Link 1->4 remove bandwidth: 21
+[Accepted(83)] 4->3 (10, 1.000000)
+Link 4->5 remove bandwidth: 11
+Link 5->3 remove bandwidth: 11
+[Accepted(84)] 2->3 (40, 1.000000)
+Link 2->3 remove bandwidth: 41
+[Accepted(85)] 5->4 (30, 1.000000)
+Link 5->4 remove bandwidth: 31
+[Accepted(86)] 4->2 (40, 1.000000)
+Link 4->5 remove bandwidth: 41
+Link 5->2 remove bandwidth: 41
+[Accepted(87)] 5->1 (10, 1.000000)
+Link 5->1 remove bandwidth: 11
+[Accepted(88)] 1->4 (30, 1.000000)
+Link 1->4 remove bandwidth: 31
+[Accepted(89)] 3->2 (10, 1.000000)
+Link 3->2 remove bandwidth: 11
+[Accepted(90)] 2->1 (40, 1.000000)
+Link 2->1 remove bandwidth: 30
+Link 2->5 remove bandwidth: 11
+Link 5->1 remove bandwidth: 11
+[Accepted(91)] 5->1 (40, 1.000000)
+Link 5->1 remove bandwidth: 41
+[Accepted(92)] 5->3 (30, 1.000000)
+Link 5->3 remove bandwidth: 31
 
 Simulation Time: 7
-Link 3->5 add bandwidth: 1
-Link 5->1 add bandwidth: 1
-Link 3->4 add bandwidth: 4
-Link 4->1 add bandwidth: 4
-Link 1->4 add bandwidth: 2
-Link 2->1 add bandwidth: 2
-Link 3->2 add bandwidth: 2
-Link 2->3 add bandwidth: 3
-Link 2->5 add bandwidth: 1
-Link 5->3 add bandwidth: 1
-Link 5->2 add bandwidth: 1
-Link 3->2 add bandwidth: 4
-Link 5->3 add bandwidth: 4
-Link 4->1 add bandwidth: 1
-Link 4->5 add bandwidth: 2
-Link 5->1 add bandwidth: 2
-Link 2->1 add bandwidth: 2
-Link 3->2 add bandwidth: 2
-Link 4->5 add bandwidth: 2
-Link 5->3 add bandwidth: 2
-Link 2->5 add bandwidth: 3
-Link 2->1 add bandwidth: 3
-Link 3->2 add bandwidth: 3
-Link 5->3 add bandwidth: 3
-Link 2->1 add bandwidth: 5
-Link 3->2 add bandwidth: 5
-Link 3->4 add bandwidth: 2
-Link 3->5 add bandwidth: 1
-Link 5->4 add bandwidth: 1
-[Accepted(60)] 3->1 (2, 1.000000)
-Link 3->5 remove bandwidth: 2
-Link 5->1 remove bandwidth: 2
-Link 3->4 remove bandwidth: 1
-Link 4->5 remove bandwidth: 1
-Link 5->1 remove bandwidth: 1
-[Accepted(61)] 3->5 (4, 1.000000)
-Link 2->5 remove bandwidth: 4
-Link 3->2 remove bandwidth: 4
-Link 3->4 remove bandwidth: 1
-Link 4->5 remove bandwidth: 1
-[Accepted(62)] 4->1 (3, 1.000000)
-Link 4->1 remove bandwidth: 4
-[Accepted(63)] 3->1 (4, 1.000000)
-Link 2->1 remove bandwidth: 6
-Link 3->2 remove bandwidth: 6
-[Blocked(64)] 3->5 (3, 1.000000)
-[Accepted(65)] 4->3 (3, 1.000000)
-Link 4->5 remove bandwidth: 3
-Link 5->3 remove bandwidth: 3
-Link 1->2 remove bandwidth: 1
-Link 2->3 remove bandwidth: 1
-Link 4->1 remove bandwidth: 1
-[Accepted(66)] 3->4 (2, 1.000000)
-Link 3->4 remove bandwidth: 3
-[Accepted(67)] 5->1 (1, 1.000000)
-Link 4->1 remove bandwidth: 2
-Link 5->4 remove bandwidth: 2
-[Blocked(68)] 1->5 (2, 1.000000)
+[End(51)] 3->4 (20, 1.000000), 7
+[End(53)] 2->1 (10, 1.000000), 7
+Link 2->1 add bandwidth: 11
+[End(61)] 4->5 (40, 1.000000), 7
+Link 4->5 add bandwidth: 41
+[End(66)] 2->5 (20, 1.000000), 7
+Link 2->5 add bandwidth: 21
+[End(67)] 2->5 (40, 1.000000), 7
+Link 2->5 add bandwidth: 41
+[End(68)] 5->2 (10, 1.000000), 7
+Link 5->2 add bandwidth: 11
+[End(69)] 1->2 (40, 1.000000), 7
+Link 1->2 add bandwidth: 41
+[End(72)] 2->5 (30, 1.000000), 7
+Link 2->5 add bandwidth: 31
+[End(75)] 4->3 (10, 1.000000), 7
+Link 4->5 add bandwidth: 11
+Link 5->3 add bandwidth: 11
+[End(76)] 2->5 (20, 1.000000), 7
+Link 2->5 add bandwidth: 21
+[End(78)] 5->1 (10, 1.000000), 7
+Link 5->1 add bandwidth: 11
+[End(79)] 5->2 (40, 1.000000), 7
+Link 5->2 add bandwidth: 41
+[End(81)] 3->1 (20, 1.000000), 7
+Link 3->5 add bandwidth: 21
+Link 5->1 add bandwidth: 21
+[End(85)] 5->4 (30, 1.000000), 7
+Link 5->4 add bandwidth: 31
+[End(86)] 4->2 (40, 1.000000), 7
+Link 4->5 add bandwidth: 41
+Link 5->2 add bandwidth: 41
+[End(87)] 5->1 (10, 1.000000), 7
+Link 5->1 add bandwidth: 11
+[End(89)] 3->2 (10, 1.000000), 7
+Link 3->2 add bandwidth: 11
+[End(92)] 5->3 (30, 1.000000), 7
+Link 5->3 add bandwidth: 31
+1 2 300
+1 4 248
+1 5 300
+2 1 270
+2 3 259
+2 5 289
+3 2 257
+3 5 300
+4 1 300
+4 3 300
+4 5 289
+5 1 237
+5 2 300
+5 3 289
+5 4 300
+[Accepted(93)] 5->2 (30, 1.000000)
+Link 5->2 remove bandwidth: 31
+[Accepted(94)] 2->1 (40, 1.000000)
+Link 2->5 remove bandwidth: 41
+Link 5->1 remove bandwidth: 41
+[Accepted(95)] 5->4 (30, 1.000000)
+Link 5->4 remove bandwidth: 31
+[Accepted(96)] 5->4 (40, 1.000000)
+Link 5->4 remove bandwidth: 41
+[Accepted(97)] 1->5 (40, 1.000000)
+Link 1->5 remove bandwidth: 43
+[Accepted(98)] 5->3 (10, 1.000000)
+Link 5->3 remove bandwidth: 11
+[Accepted(99)] 2->5 (40, 1.000000)
+Link 2->5 remove bandwidth: 41
+[Accepted(100)] 3->4 (10, 1.000000)
+Link 3->5 remove bandwidth: 11
+Link 5->4 remove bandwidth: 11
 
 Simulation Time: 8
-Link 1->4 add bandwidth: 2
-Link 2->1 add bandwidth: 2
-Link 3->2 add bandwidth: 2
-Link 5->2 add bandwidth: 1
-Link 3->2 add bandwidth: 4
-Link 5->3 add bandwidth: 4
-Link 4->1 add bandwidth: 1
-Link 4->5 add bandwidth: 2
-Link 5->1 add bandwidth: 2
-Link 2->1 add bandwidth: 2
-Link 3->2 add bandwidth: 2
-Link 4->5 add bandwidth: 2
-Link 5->3 add bandwidth: 2
-Link 2->5 add bandwidth: 3
-Link 2->1 add bandwidth: 3
-Link 3->2 add bandwidth: 3
-Link 5->3 add bandwidth: 3
-Link 3->4 add bandwidth: 2
-Link 3->5 add bandwidth: 1
-Link 5->4 add bandwidth: 1
-Link 4->1 add bandwidth: 2
-Link 5->4 add bandwidth: 2
-[Accepted(69)] 2->4 (1, 1.000000)
-Link 2->5 remove bandwidth: 2
-Link 5->4 remove bandwidth: 2
-[Accepted(70)] 2->4 (1, 1.000000)
-Link 2->5 remove bandwidth: 1
-Link 5->4 remove bandwidth: 1
-Link 1->4 remove bandwidth: 1
-Link 2->1 remove bandwidth: 1
-[Accepted(71)] 2->1 (3, 1.000000)
-Link 2->1 remove bandwidth: 4
-[Accepted(72)] 3->5 (4, 1.000000)
-Link 3->5 remove bandwidth: 1
-Link 1->4 remove bandwidth: 1
-Link 2->1 remove bandwidth: 1
-Link 3->2 remove bandwidth: 1
-Link 4->5 remove bandwidth: 1
-Link 3->4 remove bandwidth: 3
-Link 4->5 remove bandwidth: 3
-[Blocked(73)] 2->5 (4, 1.000000)
-[Blocked(74)] 2->5 (1, 1.000000)
-[Accepted(75)] 2->4 (2, 1.000000)
-Link 1->4 remove bandwidth: 4
-Link 2->1 remove bandwidth: 4
-
-Simulation Time: 9
-Link 5->2 add bandwidth: 1
-Link 3->2 add bandwidth: 4
-Link 5->3 add bandwidth: 4
-Link 1->2 add bandwidth: 3
-Link 2->5 add bandwidth: 3
-Link 5->3 add bandwidth: 3
-Link 4->1 add bandwidth: 1
-Link 4->5 add bandwidth: 2
-Link 5->1 add bandwidth: 2
-Link 2->1 add bandwidth: 2
-Link 3->2 add bandwidth: 2
-Link 4->5 add bandwidth: 2
-Link 5->3 add bandwidth: 2
-Link 2->1 add bandwidth: 3
-Link 3->2 add bandwidth: 3
-Link 5->3 add bandwidth: 3
-Link 3->4 add bandwidth: 2
-Link 3->5 add bandwidth: 1
-Link 5->4 add bandwidth: 1
-Link 4->1 add bandwidth: 2
-Link 5->4 add bandwidth: 2
-[Accepted(76)] 3->4 (3, 1.000000)
-Link 3->5 remove bandwidth: 1
-Link 5->4 remove bandwidth: 1
-Link 3->4 remove bandwidth: 2
-Link 2->5 remove bandwidth: 1
-Link 3->2 remove bandwidth: 1
-Link 5->4 remove bandwidth: 1
-[Accepted(77)] 1->3 (3, 1.000000)
-Link 1->2 remove bandwidth: 4
-Link 2->3 remove bandwidth: 4
-[Accepted(78)] 2->1 (3, 1.000000)
-Link 2->1 remove bandwidth: 4
-[Accepted(79)] 3->1 (3, 1.000000)
-Link 2->1 remove bandwidth: 4
-Link 3->2 remove bandwidth: 4
-[Accepted(80)] 3->5 (1, 1.000000)
-Link 2->5 remove bandwidth: 2
-Link 3->2 remove bandwidth: 2
-[Accepted(81)] 5->3 (2, 1.000000)
-Link 5->3 remove bandwidth: 3
-[Blocked(82)] 2->1 (2, 1.000000)
-[Accepted(83)] 4->2 (3, 1.000000)
-Link 3->2 remove bandwidth: 1
-Link 4->5 remove bandwidth: 1
-Link 5->3 remove bandwidth: 1
-Link 4->5 remove bandwidth: 3
-Link 5->2 remove bandwidth: 3
-[Blocked(84)] 1->2 (2, 1.000000)
-
-Simulation Time: 10
-Link 1->2 add bandwidth: 3
-Link 2->5 add bandwidth: 3
-Link 5->3 add bandwidth: 3
-Link 3->4 add bandwidth: 2
-Link 3->5 add bandwidth: 1
-Link 5->4 add bandwidth: 1
-Link 4->1 add bandwidth: 2
-Link 5->4 add bandwidth: 2
-[Accepted(85)] 5->3 (2, 1.000000)
-Link 5->3 remove bandwidth: 3
-[Accepted(86)] 5->2 (4, 1.000000)
-Link 3->2 remove bandwidth: 5
-Link 5->3 remove bandwidth: 5
-[Accepted(87)] 5->3 (2, 1.000000)
-Link 5->3 remove bandwidth: 3
-[Accepted(88)] 2->4 (2, 1.000000)
-Link 2->5 remove bandwidth: 3
-Link 5->4 remove bandwidth: 3
-[Accepted(89)] 4->1 (2, 1.000000)
-Link 4->1 remove bandwidth: 3
-[Blocked(90)] 3->5 (2, 1.000000)
-
-Simulation Time: 11
-Link 3->4 add bandwidth: 2
-Link 3->5 add bandwidth: 1
-Link 5->4 add bandwidth: 1
-Link 4->1 add bandwidth: 2
-Link 5->4 add bandwidth: 2
-Link 3->5 add bandwidth: 1
-Link 1->4 add bandwidth: 1
-Link 2->1 add bandwidth: 1
-Link 3->2 add bandwidth: 1
-Link 4->5 add bandwidth: 1
-Link 3->4 add bandwidth: 3
-Link 4->5 add bandwidth: 3
-Link 2->1 add bandwidth: 4
-[Accepted(91)] 3->5 (4, 1.000000)
-Link 3->5 remove bandwidth: 3
-Link 3->4 remove bandwidth: 3
-Link 4->5 remove bandwidth: 3
-[Accepted(92)] 3->1 (4, 1.000000)
-Link 2->1 remove bandwidth: 4
-Link 3->2 remove bandwidth: 4
-Link 3->4 remove bandwidth: 1
+[End(64)] 3->2 (30, 1.000000), 8
+Link 3->2 add bandwidth: 32
+[End(70)] 3->2 (10, 1.000000), 8
+Link 3->2 add bandwidth: 11
+[End(77)] 5->1 (10, 1.000000), 8
+Link 5->1 add bandwidth: 11
+[End(82)] 1->4 (20, 1.000000), 8
+Link 1->4 add bandwidth: 21
+[End(88)] 1->4 (30, 1.000000), 8
+Link 1->4 add bandwidth: 31
+[End(94)] 2->1 (40, 1.000000), 8
+Link 2->5 add bandwidth: 41
+Link 5->1 add bandwidth: 41
+1 2 300
+1 4 300
+1 5 257
+2 1 270
+2 3 259
+2 5 248
+3 2 300
+3 5 289
+4 1 300
+4 3 300
+4 5 289
+5 1 248
+5 2 269
+5 3 278
+5 4 217
+[Accepted(101)] 2->3 (30, 1.000000)
+Link 2->3 remove bandwidth: 31
+[Accepted(102)] 4->1 (30, 1.000000)
+Link 4->1 remove bandwidth: 30
 Link 4->5 remove bandwidth: 1
 Link 5->1 remove bandwidth: 1
-[Blocked(93)] 2->5 (3, 1.000000)
-[Accepted(94)] 5->4 (3, 1.000000)
-Link 5->4 remove bandwidth: 4
-[Blocked(95)] 1->2 (3, 1.000000)
-[Blocked(96)] 1->5 (1, 1.000000)
-[Accepted(97)] 5->1 (1, 1.000000)
-Link 5->1 remove bandwidth: 2
-[Accepted(98)] 1->4 (4, 1.000000)
-Link 1->4 remove bandwidth: 5
-[Blocked(99)] 3->1 (4, 1.000000)
+[Accepted(103)] 1->2 (20, 1.000000)
+Link 1->2 remove bandwidth: 21
+[Accepted(104)] 3->5 (20, 1.000000)
+Link 3->5 remove bandwidth: 21
+[Accepted(105)] 3->5 (20, 1.000000)
+Link 3->5 remove bandwidth: 21
+[Accepted(106)] 5->3 (40, 1.000000)
+Link 5->3 remove bandwidth: 41
+[Accepted(107)] 1->5 (10, 1.000000)
+Link 1->5 remove bandwidth: 11
+[Accepted(108)] 1->3 (30, 1.000000)
+Link 1->5 remove bandwidth: 31
+Link 5->3 remove bandwidth: 31
+[Accepted(109)] 2->1 (40, 1.000000)
+Link 2->1 remove bandwidth: 33
+Link 2->5 remove bandwidth: 8
+Link 5->1 remove bandwidth: 8
+[Accepted(110)] 4->5 (10, 1.000000)
+Link 4->5 remove bandwidth: 11
+[Accepted(111)] 3->5 (10, 1.000000)
+Link 3->5 remove bandwidth: 11
+
+Simulation Time: 9
+[End(84)] 2->3 (40, 1.000000), 9
+Link 2->3 add bandwidth: 41
+[End(90)] 2->1 (40, 1.000000), 9
+Link 2->1 add bandwidth: 30
+Link 2->5 add bandwidth: 11
+Link 5->1 add bandwidth: 11
+[End(91)] 5->1 (40, 1.000000), 9
+Link 5->1 add bandwidth: 41
+[End(95)] 5->4 (30, 1.000000), 9
+Link 5->4 add bandwidth: 31
+[End(96)] 5->4 (40, 1.000000), 9
+Link 5->4 add bandwidth: 41
+[End(98)] 5->3 (10, 1.000000), 9
+Link 5->3 add bandwidth: 11
+[End(99)] 2->5 (40, 1.000000), 9
+Link 2->5 add bandwidth: 41
+[End(101)] 2->3 (30, 1.000000), 9
+Link 2->3 add bandwidth: 31
+[End(104)] 3->5 (20, 1.000000), 9
+Link 3->5 add bandwidth: 21
+[End(105)] 3->5 (20, 1.000000), 9
+Link 3->5 add bandwidth: 21
+[End(106)] 5->3 (40, 1.000000), 9
+Link 5->3 add bandwidth: 41
+[End(111)] 3->5 (10, 1.000000), 9
+Link 3->5 add bandwidth: 11
+1 2 279
+1 4 300
+1 5 215
+2 1 267
+2 3 300
+2 5 292
+3 2 300
+3 5 289
+4 1 270
+4 3 300
+4 5 277
+5 1 291
+5 2 269
+5 3 258
+5 4 289
+[Accepted(112)] 5->4 (20, 1.000000)
+Link 5->4 remove bandwidth: 21
+[Accepted(113)] 1->4 (10, 1.000000)
+Link 1->4 remove bandwidth: 11
+[Accepted(114)] 4->5 (20, 1.000000)
+Link 4->5 remove bandwidth: 21
+[Accepted(115)] 2->3 (20, 1.000000)
+Link 2->3 remove bandwidth: 21
+[Accepted(116)] 5->3 (10, 1.000000)
+Link 5->3 remove bandwidth: 11
+[Accepted(117)] 5->1 (30, 1.000000)
+Link 5->1 remove bandwidth: 31
+[Accepted(118)] 4->5 (10, 1.000000)
+Link 4->5 remove bandwidth: 11
+
+Simulation Time: 10
+[Link repaired] 3->4
+[End(83)] 4->3 (10, 1.000000), 10
+Link 4->5 add bandwidth: 11
+Link 5->3 add bandwidth: 11
+[End(93)] 5->2 (30, 1.000000), 10
+Link 5->2 add bandwidth: 31
+[End(100)] 3->4 (10, 1.000000), 10
+Link 3->5 add bandwidth: 11
+Link 5->4 add bandwidth: 11
+[End(102)] 4->1 (30, 1.000000), 10
+Link 4->1 add bandwidth: 30
+Link 4->5 add bandwidth: 1
+Link 5->1 add bandwidth: 1
+[End(103)] 1->2 (20, 1.000000), 10
+Link 1->2 add bandwidth: 21
+[End(108)] 1->3 (30, 1.000000), 10
+Link 1->5 add bandwidth: 31
+Link 5->3 add bandwidth: 31
+[End(112)] 5->4 (20, 1.000000), 10
+Link 5->4 add bandwidth: 21
+[End(114)] 4->5 (20, 1.000000), 10
+Link 4->5 add bandwidth: 21
+[End(116)] 5->3 (10, 1.000000), 10
+Link 5->3 add bandwidth: 11
+1 2 300
+1 4 289
+1 5 246
+2 1 267
+2 3 279
+2 5 292
+3 2 300
+3 4 300
+3 5 300
+4 1 300
+4 3 300
+4 5 278
+5 1 261
+5 2 300
+5 3 300
+5 4 300
+[Accepted(119)] 4->5 (10, 1.000000)
+Link 4->5 remove bandwidth: 11
+[Accepted(120)] 2->4 (40, 1.000000)
+Link 2->5 remove bandwidth: 43
+Link 5->4 remove bandwidth: 43
+[Accepted(121)] 1->5 (40, 1.000000)
+Link 1->5 remove bandwidth: 42
+[Accepted(122)] 2->5 (30, 1.000000)
+Link 2->5 remove bandwidth: 31
+[Accepted(123)] 1->4 (10, 1.000000)
+Link 1->4 remove bandwidth: 11
+[Accepted(124)] 4->5 (10, 1.000000)
+Link 4->5 remove bandwidth: 11
+
+Simulation Time: 11
+[End(110)] 4->5 (10, 1.000000), 11
+Link 4->5 add bandwidth: 11
+[End(115)] 2->3 (20, 1.000000), 11
+Link 2->3 add bandwidth: 21
+[End(117)] 5->1 (30, 1.000000), 11
+Link 5->1 add bandwidth: 31
+[End(118)] 4->5 (10, 1.000000), 11
+Link 4->5 add bandwidth: 11
+[End(123)] 1->4 (10, 1.000000), 11
+Link 1->4 add bandwidth: 11
+1 2 300
+1 4 289
+1 5 204
+2 1 267
+2 3 300
+2 5 218
+3 2 300
+3 4 300
+3 5 300
+4 1 300
+4 3 300
+4 5 278
+5 1 292
+5 2 300
+5 3 300
+5 4 257
+[Accepted(125)] 2->5 (20, 1.000000)
+Link 2->5 remove bandwidth: 21
+[Accepted(126)] 3->2 (40, 1.000000)
+Link 3->2 remove bandwidth: 42
+[Accepted(127)] 4->5 (40, 1.000000)
+Link 4->5 remove bandwidth: 41
+[Accepted(128)] 2->1 (20, 1.000000)
+Link 2->1 remove bandwidth: 21
+[Accepted(129)] 3->4 (20, 1.000000)
+Link 3->4 remove bandwidth: 20
+Link 3->5 remove bandwidth: 1
+Link 5->4 remove bandwidth: 1
+[Accepted(130)] 5->3 (30, 1.000000)
+Link 5->3 remove bandwidth: 31
+[Accepted(131)] 1->5 (10, 1.000000)
+Link 1->5 remove bandwidth: 11
+[Accepted(132)] 4->2 (20, 1.000000)
+Link 4->5 remove bandwidth: 21
+Link 5->2 remove bandwidth: 21
+[Accepted(133)] 4->2 (20, 1.000000)
+Link 4->5 remove bandwidth: 21
+Link 5->2 remove bandwidth: 21
+[Accepted(134)] 3->1 (20, 1.000000)
+Link 3->5 remove bandwidth: 21
+Link 5->1 remove bandwidth: 21
+[Accepted(135)] 1->5 (10, 1.000000)
+Link 1->5 remove bandwidth: 11
+[Accepted(136)] 2->3 (20, 1.000000)
+Link 2->3 remove bandwidth: 21
+[Accepted(137)] 3->2 (20, 1.000000)
+Link 3->2 remove bandwidth: 21
+[Accepted(138)] 3->2 (20, 1.000000)
+Link 3->2 remove bandwidth: 21
+[Accepted(139)] 2->1 (10, 1.000000)
+Link 2->1 remove bandwidth: 11
 
 Simulation Time: 12
-Link 2->1 add bandwidth: 6
-Link 3->2 add bandwidth: 6
-Link 4->1 add bandwidth: 2
-Link 5->4 add bandwidth: 2
-Link 2->1 add bandwidth: 4
-Link 3->5 add bandwidth: 1
-Link 1->4 add bandwidth: 1
-Link 2->1 add bandwidth: 1
-Link 3->2 add bandwidth: 1
-Link 4->5 add bandwidth: 1
-Link 3->4 add bandwidth: 3
-Link 4->5 add bandwidth: 3
-Link 2->1 add bandwidth: 4
-Link 5->3 add bandwidth: 3
-Link 3->2 add bandwidth: 5
-Link 5->3 add bandwidth: 5
-Link 5->3 add bandwidth: 3
+[End(97)] 1->5 (40, 1.000000), 12
+Link 1->5 add bandwidth: 43
+[End(107)] 1->5 (10, 1.000000), 12
+Link 1->5 add bandwidth: 11
+[End(109)] 2->1 (40, 1.000000), 12
+Link 2->1 add bandwidth: 33
+Link 2->5 add bandwidth: 8
+Link 5->1 add bandwidth: 8
+[End(119)] 4->5 (10, 1.000000), 12
+Link 4->5 add bandwidth: 11
+[End(124)] 4->5 (10, 1.000000), 12
+Link 4->5 add bandwidth: 11
+[End(127)] 4->5 (40, 1.000000), 12
+Link 4->5 add bandwidth: 41
+[End(128)] 2->1 (20, 1.000000), 12
+Link 2->1 add bandwidth: 21
+[End(130)] 5->3 (30, 1.000000), 12
+Link 5->3 add bandwidth: 31
+[End(134)] 3->1 (20, 1.000000), 12
+Link 3->5 add bandwidth: 21
+Link 5->1 add bandwidth: 21
+[End(137)] 3->2 (20, 1.000000), 12
+Link 3->2 add bandwidth: 21
+1 2 300
+1 4 289
+1 5 236
+2 1 289
+2 3 279
+2 5 205
+3 2 237
+3 4 280
+3 5 299
+4 1 300
+4 3 300
+4 5 258
+5 1 300
+5 2 258
+5 3 300
+5 4 256
+[Accepted(140)] 1->3 (10, 1.000000)
+Link 1->5 remove bandwidth: 11
+Link 5->3 remove bandwidth: 11
+[Accepted(141)] 2->4 (40, 1.000000)
+Link 2->5 remove bandwidth: 41
+Link 5->4 remove bandwidth: 41
+[Accepted(142)] 4->1 (40, 1.000000)
+Link 4->1 remove bandwidth: 40
+Link 4->5 remove bandwidth: 1
+Link 5->1 remove bandwidth: 1
+[Accepted(143)] 2->5 (30, 1.000000)
+Link 2->5 remove bandwidth: 31
+[Accepted(144)] 2->1 (30, 1.000000)
+Link 2->1 remove bandwidth: 31
+[Accepted(145)] 5->1 (30, 1.000000)
+Link 5->1 remove bandwidth: 31
+[Accepted(146)] 1->2 (20, 1.000000)
+Link 1->2 remove bandwidth: 21
+[Accepted(147)] 2->5 (30, 1.000000)
+Link 2->5 remove bandwidth: 31
+[Accepted(148)] 3->4 (40, 1.000000)
+Link 3->4 remove bandwidth: 40
+Link 3->5 remove bandwidth: 1
+Link 5->4 remove bandwidth: 1
+[Accepted(149)] 4->5 (10, 1.000000)
+Link 4->5 remove bandwidth: 11
+[Accepted(150)] 5->1 (20, 1.000000)
+Link 5->1 remove bandwidth: 21
+[Accepted(151)] 5->1 (20, 1.000000)
+Link 5->1 remove bandwidth: 21
 
 Simulation Time: 13
-Link 4->1 add bandwidth: 2
-Link 5->4 add bandwidth: 2
+[End(129)] 3->4 (20, 1.000000), 13
+Link 3->4 add bandwidth: 20
 Link 3->5 add bandwidth: 1
-Link 1->4 add bandwidth: 1
-Link 2->1 add bandwidth: 1
-Link 3->2 add bandwidth: 1
+Link 5->4 add bandwidth: 1
+[End(132)] 4->2 (20, 1.000000), 13
+Link 4->5 add bandwidth: 21
+Link 5->2 add bandwidth: 21
+[End(133)] 4->2 (20, 1.000000), 13
+Link 4->5 add bandwidth: 21
+Link 5->2 add bandwidth: 21
+[End(136)] 2->3 (20, 1.000000), 13
+Link 2->3 add bandwidth: 21
+[End(138)] 3->2 (20, 1.000000), 13
+Link 3->2 add bandwidth: 21
+[End(139)] 2->1 (10, 1.000000), 13
+Link 2->1 add bandwidth: 11
+[End(140)] 1->3 (10, 1.000000), 13
+Link 1->5 add bandwidth: 11
+Link 5->3 add bandwidth: 11
+[End(141)] 2->4 (40, 1.000000), 13
+Link 2->5 add bandwidth: 41
+Link 5->4 add bandwidth: 41
+[End(142)] 4->1 (40, 1.000000), 13
+Link 4->1 add bandwidth: 40
 Link 4->5 add bandwidth: 1
-Link 3->4 add bandwidth: 3
-Link 4->5 add bandwidth: 3
-Link 2->1 add bandwidth: 4
-Link 2->5 add bandwidth: 2
-Link 3->2 add bandwidth: 2
-Link 3->2 add bandwidth: 5
-Link 5->3 add bandwidth: 5
-Link 5->3 add bandwidth: 3
-Link 4->1 add bandwidth: 3
+Link 5->1 add bandwidth: 1
+[End(143)] 2->5 (30, 1.000000), 13
+Link 2->5 add bandwidth: 31
+[End(145)] 5->1 (30, 1.000000), 13
+Link 5->1 add bandwidth: 31
+[End(146)] 1->2 (20, 1.000000), 13
+Link 1->2 add bandwidth: 21
+[End(148)] 3->4 (40, 1.000000), 13
+Link 3->4 add bandwidth: 40
+Link 3->5 add bandwidth: 1
+Link 5->4 add bandwidth: 1
+1 2 300
+1 4 289
+1 5 236
+2 1 269
+2 3 300
+2 5 174
+3 2 258
+3 4 300
+3 5 300
+4 1 300
+4 3 300
+4 5 289
+5 1 258
+5 2 300
+5 3 300
+5 4 257
+[Accepted(152)] 3->1 (20, 1.000000)
+Link 3->5 remove bandwidth: 21
+Link 5->1 remove bandwidth: 21
+[Accepted(153)] 5->3 (30, 1.000000)
+Link 5->3 remove bandwidth: 31
+[Accepted(154)] 5->3 (10, 1.000000)
+Link 5->3 remove bandwidth: 11
+[Accepted(155)] 2->4 (30, 1.000000)
+Link 2->5 remove bandwidth: 31
+Link 5->4 remove bandwidth: 31
+[Accepted(156)] 3->5 (20, 1.000000)
+Link 3->5 remove bandwidth: 21
+[Accepted(157)] 3->1 (10, 1.000000)
+Link 3->5 remove bandwidth: 11
+Link 5->1 remove bandwidth: 11
+[Accepted(158)] 5->1 (20, 1.000000)
+Link 5->1 remove bandwidth: 21
+[Accepted(159)] 1->2 (10, 1.000000)
+Link 1->2 remove bandwidth: 11
+[Accepted(160)] 2->1 (40, 1.000000)
+Link 2->1 remove bandwidth: 41
+[Accepted(161)] 5->4 (40, 1.000000)
+Link 5->4 remove bandwidth: 41
+[Accepted(162)] 3->1 (10, 1.000000)
+Link 3->5 remove bandwidth: 11
+Link 5->1 remove bandwidth: 11
+[Accepted(163)] 1->3 (20, 1.000000)
+Link 1->5 remove bandwidth: 21
+Link 5->3 remove bandwidth: 21
+[Accepted(164)] 5->3 (10, 1.000000)
+Link 5->3 remove bandwidth: 11
+[Accepted(165)] 2->4 (40, 1.000000)
+Link 2->5 remove bandwidth: 42
+Link 5->4 remove bandwidth: 42
+[Accepted(166)] 2->1 (30, 1.000000)
+Link 2->1 remove bandwidth: 31
 
 Simulation Time: 14
-Link 3->5 add bandwidth: 1
-Link 1->4 add bandwidth: 1
-Link 2->1 add bandwidth: 1
-Link 3->2 add bandwidth: 1
-Link 4->5 add bandwidth: 1
-Link 3->4 add bandwidth: 3
-Link 4->5 add bandwidth: 3
-Link 2->5 add bandwidth: 2
-Link 3->2 add bandwidth: 2
-Link 3->2 add bandwidth: 5
-Link 5->3 add bandwidth: 5
-Link 4->1 add bandwidth: 3
-Link 5->1 add bandwidth: 2
+[End(113)] 1->4 (10, 1.000000), 14
+Link 1->4 add bandwidth: 11
+[End(120)] 2->4 (40, 1.000000), 14
+Link 2->5 add bandwidth: 43
+Link 5->4 add bandwidth: 43
+[End(121)] 1->5 (40, 1.000000), 14
+Link 1->5 add bandwidth: 42
+[End(122)] 2->5 (30, 1.000000), 14
+Link 2->5 add bandwidth: 31
+[End(125)] 2->5 (20, 1.000000), 14
+Link 2->5 add bandwidth: 21
+[End(126)] 3->2 (40, 1.000000), 14
+Link 3->2 add bandwidth: 42
+[End(131)] 1->5 (10, 1.000000), 14
+Link 1->5 add bandwidth: 11
+[End(135)] 1->5 (10, 1.000000), 14
+Link 1->5 add bandwidth: 11
+[End(144)] 2->1 (30, 1.000000), 14
+Link 2->1 add bandwidth: 31
+[End(147)] 2->5 (30, 1.000000), 14
+Link 2->5 add bandwidth: 31
+[End(149)] 4->5 (10, 1.000000), 14
+Link 4->5 add bandwidth: 11
+[End(150)] 5->1 (20, 1.000000), 14
+Link 5->1 add bandwidth: 21
+[End(151)] 5->1 (20, 1.000000), 14
+Link 5->1 add bandwidth: 21
+[End(152)] 3->1 (20, 1.000000), 14
+Link 3->5 add bandwidth: 21
+Link 5->1 add bandwidth: 21
+[End(153)] 5->3 (30, 1.000000), 14
+Link 5->3 add bandwidth: 31
+[End(155)] 2->4 (30, 1.000000), 14
+Link 2->5 add bandwidth: 31
+Link 5->4 add bandwidth: 31
+[End(156)] 3->5 (20, 1.000000), 14
+Link 3->5 add bandwidth: 21
+[End(160)] 2->1 (40, 1.000000), 14
+Link 2->1 add bandwidth: 41
+[End(162)] 3->1 (10, 1.000000), 14
+Link 3->5 add bandwidth: 11
+Link 5->1 add bandwidth: 11
+[End(163)] 1->3 (20, 1.000000), 14
+Link 1->5 add bandwidth: 21
+Link 5->3 add bandwidth: 21
+[End(166)] 2->1 (30, 1.000000), 14
+Link 2->1 add bandwidth: 31
+1 2 289
+1 4 300
+1 5 300
+2 1 300
+2 3 300
+2 5 258
+3 2 300
+3 4 300
+3 5 289
+4 1 300
+4 3 300
+4 5 300
+5 1 268
+5 2 300
+5 3 278
+5 4 217
+[Accepted(167)] 5->3 (20, 1.000000)
+Link 5->3 remove bandwidth: 21
+[Accepted(168)] 5->4 (10, 1.000000)
+Link 5->4 remove bandwidth: 11
+[Accepted(169)] 1->4 (10, 1.000000)
+Link 1->4 remove bandwidth: 11
+[Accepted(170)] 1->5 (40, 1.000000)
+Link 1->5 remove bandwidth: 41
+[Accepted(171)] 5->3 (30, 1.000000)
+Link 5->3 remove bandwidth: 31
+[Accepted(172)] 3->4 (30, 1.000000)
+Link 3->4 remove bandwidth: 31
+[Accepted(173)] 4->2 (20, 1.000000)
+Link 4->5 remove bandwidth: 21
+Link 5->2 remove bandwidth: 21
+[Accepted(174)] 1->4 (20, 1.000000)
+Link 1->4 remove bandwidth: 21
+[Accepted(175)] 1->2 (20, 1.000000)
+Link 1->2 remove bandwidth: 21
+[Accepted(176)] 5->4 (40, 1.000000)
+Link 5->4 remove bandwidth: 41
 
 Simulation Time: 15
-Link 3->4 add bandwidth: 3
-Link 2->5 add bandwidth: 2
-Link 3->2 add bandwidth: 2
-Link 5->1 add bandwidth: 2
+[End(154)] 5->3 (10, 1.000000), 15
+Link 5->3 add bandwidth: 11
+[End(157)] 3->1 (10, 1.000000), 15
+Link 3->5 add bandwidth: 11
+Link 5->1 add bandwidth: 11
+[End(165)] 2->4 (40, 1.000000), 15
+Link 2->5 add bandwidth: 42
+Link 5->4 add bandwidth: 42
+[End(167)] 5->3 (20, 1.000000), 15
+Link 5->3 add bandwidth: 21
+[End(170)] 1->5 (40, 1.000000), 15
+Link 1->5 add bandwidth: 41
+[End(173)] 4->2 (20, 1.000000), 15
+Link 4->5 add bandwidth: 21
+Link 5->2 add bandwidth: 21
+[End(174)] 1->4 (20, 1.000000), 15
+Link 1->4 add bandwidth: 21
+[End(176)] 5->4 (40, 1.000000), 15
+Link 5->4 add bandwidth: 41
+1 2 268
+1 4 289
+1 5 300
+2 1 300
+2 3 300
+2 5 300
+3 2 300
+3 4 269
+3 5 300
+4 1 300
+4 3 300
+4 5 300
+5 1 279
+5 2 300
+5 3 258
+5 4 248
+[Accepted(177)] 5->1 (10, 1.000000)
+Link 5->1 remove bandwidth: 11
+[Accepted(178)] 3->2 (20, 1.000000)
+Link 3->2 remove bandwidth: 21
+[Accepted(179)] 1->2 (40, 1.000000)
+Link 1->2 remove bandwidth: 41
+[Accepted(180)] 4->1 (30, 1.000000)
+Link 4->1 remove bandwidth: 30
+Link 4->5 remove bandwidth: 1
+Link 5->1 remove bandwidth: 1
+[Accepted(181)] 5->2 (20, 1.000000)
+Link 5->2 remove bandwidth: 21
+[Accepted(182)] 5->3 (40, 1.000000)
+Link 5->3 remove bandwidth: 41
+[Accepted(183)] 4->3 (20, 1.000000)
+Link 4->5 remove bandwidth: 21
+Link 5->3 remove bandwidth: 21
+[Accepted(184)] 4->1 (20, 1.000000)
+Link 4->1 remove bandwidth: 20
+Link 4->5 remove bandwidth: 1
+Link 5->1 remove bandwidth: 1
+[Accepted(185)] 3->5 (20, 1.000000)
+Link 3->5 remove bandwidth: 21
+[Accepted(186)] 3->1 (30, 1.000000)
+Link 3->5 remove bandwidth: 31
+Link 5->1 remove bandwidth: 31
+[Accepted(187)] 4->2 (40, 1.000000)
+Link 4->5 remove bandwidth: 41
+Link 5->2 remove bandwidth: 41
+[Accepted(188)] 2->4 (30, 1.000000)
+Link 2->5 remove bandwidth: 31
+Link 5->4 remove bandwidth: 31
 
 Simulation Time: 16
-Link 3->4 add bandwidth: 2
-Link 3->5 add bandwidth: 3
-Link 5->4 add bandwidth: 3
-Link 2->3 add bandwidth: 2
-Link 2->5 add bandwidth: 1
-Link 5->3 add bandwidth: 1
-Link 2->5 add bandwidth: 2
-Link 3->2 add bandwidth: 2
-Link 5->1 add bandwidth: 2
+[End(158)] 5->1 (20, 1.000000), 16
+Link 5->1 add bandwidth: 21
+[End(159)] 1->2 (10, 1.000000), 16
+Link 1->2 add bandwidth: 11
+[End(161)] 5->4 (40, 1.000000), 16
+Link 5->4 add bandwidth: 41
+[End(169)] 1->4 (10, 1.000000), 16
+Link 1->4 add bandwidth: 11
+[End(171)] 5->3 (30, 1.000000), 16
+Link 5->3 add bandwidth: 31
+[End(172)] 3->4 (30, 1.000000), 16
+Link 3->4 add bandwidth: 31
+[End(182)] 5->3 (40, 1.000000), 16
+Link 5->3 add bandwidth: 41
+[End(184)] 4->1 (20, 1.000000), 16
+Link 4->1 add bandwidth: 20
+Link 4->5 add bandwidth: 1
+Link 5->1 add bandwidth: 1
+[End(185)] 3->5 (20, 1.000000), 16
+Link 3->5 add bandwidth: 21
+[End(186)] 3->1 (30, 1.000000), 16
+Link 3->5 add bandwidth: 31
+Link 5->1 add bandwidth: 31
+[End(187)] 4->2 (40, 1.000000), 16
+Link 4->5 add bandwidth: 41
+Link 5->2 add bandwidth: 41
+[End(188)] 2->4 (30, 1.000000), 16
+Link 2->5 add bandwidth: 31
+Link 5->4 add bandwidth: 31
+1 2 238
+1 4 300
+1 5 300
+2 1 300
+2 3 300
+2 5 300
+3 2 279
+3 4 300
+3 5 300
+4 1 270
+4 3 300
+4 5 278
+5 1 288
+5 2 279
+5 3 268
+5 4 289
+[Accepted(189)] 2->1 (30, 1.000000)
+Link 2->1 remove bandwidth: 31
+[Accepted(190)] 3->2 (20, 1.000000)
+Link 3->2 remove bandwidth: 21
+[Accepted(191)] 1->2 (40, 1.000000)
+Link 1->2 remove bandwidth: 41
+[Accepted(192)] 5->2 (30, 1.000000)
+Link 5->2 remove bandwidth: 31
+[Accepted(193)] 4->5 (40, 1.000000)
+Link 4->5 remove bandwidth: 42
+[Accepted(194)] 3->5 (40, 1.000000)
+Link 3->5 remove bandwidth: 41
+[Accepted(195)] 5->4 (40, 1.000000)
+Link 5->4 remove bandwidth: 41
+[Accepted(196)] 2->4 (30, 1.000000)
+Link 2->5 remove bandwidth: 31
+Link 5->4 remove bandwidth: 31
+[Accepted(197)] 4->2 (20, 1.000000)
+Link 4->5 remove bandwidth: 21
+Link 5->2 remove bandwidth: 21
 
 Simulation Time: 17
-Link 3->5 failed
-Link 2->5 add bandwidth: 5
-Link 2->3 add bandwidth: 2
-Link 2->5 add bandwidth: 1
-Link 5->3 add bandwidth: 1
-Link 5->1 add bandwidth: 2
+[End(164)] 5->3 (10, 1.000000), 17
+Link 5->3 add bandwidth: 11
+[End(168)] 5->4 (10, 1.000000), 17
+Link 5->4 add bandwidth: 11
+[End(177)] 5->1 (10, 1.000000), 17
+Link 5->1 add bandwidth: 11
+[End(179)] 1->2 (40, 1.000000), 17
+Link 1->2 add bandwidth: 41
+[End(180)] 4->1 (30, 1.000000), 17
+Link 4->1 add bandwidth: 30
+Link 4->5 add bandwidth: 1
+Link 5->1 add bandwidth: 1
+[End(183)] 4->3 (20, 1.000000), 17
+Link 4->5 add bandwidth: 21
+Link 5->3 add bandwidth: 21
+[End(189)] 2->1 (30, 1.000000), 17
+Link 2->1 add bandwidth: 31
+[End(190)] 3->2 (20, 1.000000), 17
+Link 3->2 add bandwidth: 21
+[End(194)] 3->5 (40, 1.000000), 17
+Link 3->5 add bandwidth: 41
+[End(195)] 5->4 (40, 1.000000), 17
+Link 5->4 add bandwidth: 41
+[End(196)] 2->4 (30, 1.000000), 17
+Link 2->5 add bandwidth: 31
+Link 5->4 add bandwidth: 31
+1 2 238
+1 4 300
+1 5 300
+2 1 300
+2 3 300
+2 5 300
+3 2 279
+3 4 300
+3 5 300
+4 1 300
+4 3 300
+4 5 237
+5 1 300
+5 2 227
+5 3 300
+5 4 300
+[Accepted(198)] 3->1 (20, 1.000000)
+Link 3->5 remove bandwidth: 21
+Link 5->1 remove bandwidth: 21
+[Accepted(199)] 5->4 (20, 1.000000)
+Link 5->4 remove bandwidth: 21
+[Accepted(200)] 3->5 (20, 1.000000)
+Link 3->5 remove bandwidth: 21
+[Accepted(201)] 4->1 (20, 1.000000)
+Link 4->1 remove bandwidth: 20
+Link 4->5 remove bandwidth: 1
+Link 5->1 remove bandwidth: 1
+[Accepted(202)] 3->1 (20, 1.000000)
+Link 3->5 remove bandwidth: 21
+Link 5->1 remove bandwidth: 21
+[Accepted(203)] 4->5 (20, 1.000000)
+Link 4->5 remove bandwidth: 21
+[Accepted(204)] 4->2 (40, 1.000000)
+Link 4->5 remove bandwidth: 41
+Link 5->2 remove bandwidth: 41
+[Accepted(205)] 1->4 (10, 1.000000)
+Link 1->4 remove bandwidth: 11
+[Accepted(206)] 4->3 (30, 1.000000)
+Link 4->5 remove bandwidth: 31
+Link 5->3 remove bandwidth: 31
+[Accepted(207)] 1->4 (20, 1.000000)
+Link 1->4 remove bandwidth: 21
+[Accepted(208)] 4->1 (10, 1.000000)
+Link 4->1 remove bandwidth: 10
+Link 4->5 remove bandwidth: 1
+Link 5->1 remove bandwidth: 1
+[Accepted(209)] 1->3 (10, 1.000000)
+Link 1->5 remove bandwidth: 11
+Link 5->3 remove bandwidth: 11
+[Accepted(210)] 4->1 (40, 1.000000)
+Link 4->1 remove bandwidth: 40
+Link 4->5 remove bandwidth: 1
+Link 5->1 remove bandwidth: 1
 
 Simulation Time: 18
-Link 2->3 add bandwidth: 2
-Link 2->5 add bandwidth: 1
-Link 5->3 add bandwidth: 1
+[End(175)] 1->2 (20, 1.000000), 18
+Link 1->2 add bandwidth: 21
+[End(181)] 5->2 (20, 1.000000), 18
+Link 5->2 add bandwidth: 21
+[End(192)] 5->2 (30, 1.000000), 18
+Link 5->2 add bandwidth: 31
+[End(197)] 4->2 (20, 1.000000), 18
+Link 4->5 add bandwidth: 21
+Link 5->2 add bandwidth: 21
+[End(198)] 3->1 (20, 1.000000), 18
+Link 3->5 add bandwidth: 21
+Link 5->1 add bandwidth: 21
+[End(200)] 3->5 (20, 1.000000), 18
+Link 3->5 add bandwidth: 21
+[End(201)] 4->1 (20, 1.000000), 18
+Link 4->1 add bandwidth: 20
+Link 4->5 add bandwidth: 1
+Link 5->1 add bandwidth: 1
+[End(204)] 4->2 (40, 1.000000), 18
+Link 4->5 add bandwidth: 41
+Link 5->2 add bandwidth: 41
+[End(208)] 4->1 (10, 1.000000), 18
+Link 4->1 add bandwidth: 10
+Link 4->5 add bandwidth: 1
+Link 5->1 add bandwidth: 1
+[End(210)] 4->1 (40, 1.000000), 18
+Link 4->1 add bandwidth: 40
+Link 4->5 add bandwidth: 1
+Link 5->1 add bandwidth: 1
+1 2 259
+1 4 268
+1 5 289
+2 1 300
+2 3 300
+2 5 300
+3 2 279
+3 4 300
+3 5 279
+4 1 300
+4 3 300
+4 5 206
+5 1 279
+5 2 300
+5 3 258
+5 4 279
+[Accepted(211)] 2->4 (10, 1.000000)
+Link 2->5 remove bandwidth: 11
+Link 5->4 remove bandwidth: 11
+[Accepted(212)] 1->3 (10, 1.000000)
+Link 1->5 remove bandwidth: 11
+Link 5->3 remove bandwidth: 11
+[Accepted(213)] 3->4 (10, 1.000000)
+Link 3->4 remove bandwidth: 10
+Link 3->5 remove bandwidth: 1
+Link 5->4 remove bandwidth: 1
+[Accepted(214)] 3->1 (20, 1.000000)
+Link 3->5 remove bandwidth: 21
+Link 5->1 remove bandwidth: 21
+[Accepted(215)] 4->2 (40, 1.000000)
+Link 4->5 remove bandwidth: 41
+Link 5->2 remove bandwidth: 41
+[Accepted(216)] 2->3 (30, 1.000000)
+Link 2->3 remove bandwidth: 31
+[Accepted(217)] 3->2 (20, 1.000000)
+Link 3->2 remove bandwidth: 20
+Link 3->5 remove bandwidth: 1
+Link 5->2 remove bandwidth: 1
+[Accepted(218)] 2->5 (20, 1.000000)
+Link 2->5 remove bandwidth: 21
+[Accepted(219)] 3->2 (10, 1.000000)
+Link 3->2 remove bandwidth: 10
+Link 3->5 remove bandwidth: 1
+Link 5->2 remove bandwidth: 1
+[Accepted(220)] 1->4 (40, 1.000000)
+Link 1->4 remove bandwidth: 41
+[Accepted(221)] 1->3 (40, 1.000000)
+Link 1->5 remove bandwidth: 41
+Link 5->3 remove bandwidth: 41
+
+Simulation Time: 19
+[End(191)] 1->2 (40, 1.000000), 19
+Link 1->2 add bandwidth: 41
+[End(199)] 5->4 (20, 1.000000), 19
+Link 5->4 add bandwidth: 21
+[End(202)] 3->1 (20, 1.000000), 19
+Link 3->5 add bandwidth: 21
+Link 5->1 add bandwidth: 21
+[End(206)] 4->3 (30, 1.000000), 19
+Link 4->5 add bandwidth: 31
+Link 5->3 add bandwidth: 31
+[End(207)] 1->4 (20, 1.000000), 19
+Link 1->4 add bandwidth: 21
+[End(209)] 1->3 (10, 1.000000), 19
+Link 1->5 add bandwidth: 11
+Link 5->3 add bandwidth: 11
+[End(214)] 3->1 (20, 1.000000), 19
+Link 3->5 add bandwidth: 21
+Link 5->1 add bandwidth: 21
+[End(216)] 2->3 (30, 1.000000), 19
+Link 2->3 add bandwidth: 31
+[End(218)] 2->5 (20, 1.000000), 19
+Link 2->5 add bandwidth: 21
+[End(221)] 1->3 (40, 1.000000), 19
+Link 1->5 add bandwidth: 41
+Link 5->3 add bandwidth: 41
+1 2 300
+1 4 248
+1 5 289
+2 1 300
+2 3 300
+2 5 289
+3 2 249
+3 4 290
+3 5 297
+4 1 300
+4 3 300
+4 5 196
+5 1 300
+5 2 257
+5 3 289
+5 4 288
+[Accepted(222)] 4->2 (10, 1.000000)
+Link 4->5 remove bandwidth: 11
+Link 5->2 remove bandwidth: 11
+[Accepted(223)] 3->1 (30, 1.000000)
+Link 3->5 remove bandwidth: 31
+Link 5->1 remove bandwidth: 31
+[Accepted(224)] 5->3 (20, 1.000000)
+Link 5->3 remove bandwidth: 21
+[Accepted(225)] 1->2 (40, 1.000000)
+Link 1->2 remove bandwidth: 40
+Link 1->5 remove bandwidth: 1
+Link 5->2 remove bandwidth: 1
+[Accepted(226)] 2->5 (30, 1.000000)
+Link 2->5 remove bandwidth: 31
+[Accepted(227)] 1->4 (10, 1.000000)
+Link 1->4 remove bandwidth: 11
+[Accepted(228)] 4->1 (20, 1.000000)
+Link 4->1 remove bandwidth: 20
+Link 4->5 remove bandwidth: 1
+Link 5->1 remove bandwidth: 1
+[Accepted(229)] 1->5 (40, 1.000000)
+Link 1->5 remove bandwidth: 42
+[Accepted(230)] 2->1 (30, 1.000000)
+Link 2->1 remove bandwidth: 31
+[Accepted(231)] 5->1 (10, 1.000000)
+Link 5->1 remove bandwidth: 11
+[Accepted(232)] 2->3 (30, 1.000000)
+Link 2->3 remove bandwidth: 31
+
+Simulation Time: 20
+[End(178)] 3->2 (20, 1.000000), 20
+Link 3->2 add bandwidth: 21
+[End(193)] 4->5 (40, 1.000000), 20
+Link 4->5 add bandwidth: 42
+[End(203)] 4->5 (20, 1.000000), 20
+Link 4->5 add bandwidth: 21
+[End(205)] 1->4 (10, 1.000000), 20
+Link 1->4 add bandwidth: 11
+[End(211)] 2->4 (10, 1.000000), 20
+Link 2->5 add bandwidth: 11
+Link 5->4 add bandwidth: 11
+[End(213)] 3->4 (10, 1.000000), 20
+Link 3->4 add bandwidth: 10
+Link 3->5 add bandwidth: 1
+Link 5->4 add bandwidth: 1
+[End(215)] 4->2 (40, 1.000000), 20
+Link 4->5 add bandwidth: 41
+Link 5->2 add bandwidth: 41
+[End(217)] 3->2 (20, 1.000000), 20
+Link 3->2 add bandwidth: 20
+Link 3->5 add bandwidth: 1
+Link 5->2 add bandwidth: 1
+[End(219)] 3->2 (10, 1.000000), 20
+Link 3->2 add bandwidth: 10
+Link 3->5 add bandwidth: 1
+Link 5->2 add bandwidth: 1
+[End(220)] 1->4 (40, 1.000000), 20
+Link 1->4 add bandwidth: 41
+[End(225)] 1->2 (40, 1.000000), 20
+Link 1->2 add bandwidth: 40
+Link 1->5 add bandwidth: 1
+Link 5->2 add bandwidth: 1
+[End(226)] 2->5 (30, 1.000000), 20
+Link 2->5 add bandwidth: 31
+1 2 300
+1 4 289
+1 5 247
+2 1 269
+2 3 269
+2 5 300
+3 2 300
+3 4 300
+3 5 269
+4 1 280
+4 3 300
+4 5 288
+5 1 257
+5 2 289
+5 3 268
+5 4 300
+[Accepted(233)] 5->2 (20, 1.000000)
+Link 5->2 remove bandwidth: 21
+[Accepted(234)] 3->1 (10, 1.000000)
+Link 3->5 remove bandwidth: 11
+Link 5->1 remove bandwidth: 11
+[Accepted(235)] 3->1 (40, 1.000000)
+Link 3->5 remove bandwidth: 42
+Link 5->1 remove bandwidth: 42
+[Accepted(236)] 2->5 (40, 1.000000)
+Link 2->5 remove bandwidth: 41
+[Accepted(237)] 2->4 (10, 1.000000)
+Link 2->5 remove bandwidth: 11
+Link 5->4 remove bandwidth: 11
+[Accepted(238)] 5->3 (20, 1.000000)
+Link 5->3 remove bandwidth: 21
+[Accepted(239)] 2->1 (10, 1.000000)
+Link 2->1 remove bandwidth: 11
+[Accepted(240)] 1->3 (30, 1.000000)
+Link 1->5 remove bandwidth: 31
+Link 5->3 remove bandwidth: 31
+[Accepted(241)] 5->2 (10, 1.000000)
+Link 5->2 remove bandwidth: 11
+[Accepted(242)] 1->4 (40, 1.000000)
+Link 1->4 remove bandwidth: 41
+[Accepted(243)] 5->3 (40, 1.000000)
+Link 5->3 remove bandwidth: 41
+[Accepted(244)] 4->5 (10, 1.000000)
+Link 4->5 remove bandwidth: 11
+[Accepted(245)] 5->1 (20, 1.000000)
+Link 5->1 remove bandwidth: 21
+[Accepted(246)] 2->3 (40, 1.000000)
+Link 2->3 remove bandwidth: 41
+[Accepted(247)] 1->3 (20, 1.000000)
+Link 1->5 remove bandwidth: 22
+Link 5->3 remove bandwidth: 22
+
+Simulation Time: 21
+[End(212)] 1->3 (10, 1.000000), 21
+Link 1->5 add bandwidth: 11
+Link 5->3 add bandwidth: 11
+[End(223)] 3->1 (30, 1.000000), 21
+Link 3->5 add bandwidth: 31
+Link 5->1 add bandwidth: 31
+[End(224)] 5->3 (20, 1.000000), 21
+Link 5->3 add bandwidth: 21
+[End(227)] 1->4 (10, 1.000000), 21
+Link 1->4 add bandwidth: 11
+[End(228)] 4->1 (20, 1.000000), 21
+Link 4->1 add bandwidth: 20
+Link 4->5 add bandwidth: 1
+Link 5->1 add bandwidth: 1
+[End(237)] 2->4 (10, 1.000000), 21
+Link 2->5 add bandwidth: 11
+Link 5->4 add bandwidth: 11
+[End(238)] 5->3 (20, 1.000000), 21
+Link 5->3 add bandwidth: 21
+[End(241)] 5->2 (10, 1.000000), 21
+Link 5->2 add bandwidth: 11
+[End(243)] 5->3 (40, 1.000000), 21
+Link 5->3 add bandwidth: 41
+[End(244)] 4->5 (10, 1.000000), 21
+Link 4->5 add bandwidth: 11
+1 2 300
+1 4 259
+1 5 205
+2 1 258
+2 3 228
+2 5 259
+3 2 300
+3 4 300
+3 5 247
+4 1 300
+4 3 300
+4 5 289
+5 1 215
+5 2 268
+5 3 247
+5 4 300
+[Accepted(248)] 5->1 (40, 1.000000)
+Link 5->1 remove bandwidth: 41
+[Accepted(249)] 2->1 (30, 1.000000)
+Link 2->1 remove bandwidth: 31
+[Accepted(250)] 1->5 (20, 1.000000)
+Link 1->5 remove bandwidth: 21
+[Accepted(251)] 5->3 (20, 1.000000)
+Link 5->3 remove bandwidth: 21
+[Accepted(252)] 2->3 (40, 1.000000)
+Link 2->3 remove bandwidth: 41
+[Accepted(253)] 2->1 (30, 1.000000)
+Link 2->1 remove bandwidth: 31
+[Accepted(254)] 2->4 (20, 1.000000)
+Link 2->5 remove bandwidth: 21
+Link 5->4 remove bandwidth: 21
+[Accepted(255)] 1->4 (10, 1.000000)
+Link 1->4 remove bandwidth: 11
+[Accepted(256)] 4->5 (40, 1.000000)
+Link 4->5 remove bandwidth: 41
+
+Simulation Time: 22
+[Link failed] 5->4
+Link 2->5 add bandwidth: 21
+Link 5->4 add bandwidth: 21
+[Bandwidth Lowering(254)] 2->4 (20, 1.000000)->0
+[End(229)] 1->5 (40, 1.000000), 22
+Link 1->5 add bandwidth: 42
+[End(230)] 2->1 (30, 1.000000), 22
+Link 2->1 add bandwidth: 31
+[End(232)] 2->3 (30, 1.000000), 22
+Link 2->3 add bandwidth: 31
+[End(233)] 5->2 (20, 1.000000), 22
+Link 5->2 add bandwidth: 21
+[End(235)] 3->1 (40, 1.000000), 22
+Link 3->5 add bandwidth: 42
+Link 5->1 add bandwidth: 42
+[End(240)] 1->3 (30, 1.000000), 22
+Link 1->5 add bandwidth: 31
+Link 5->3 add bandwidth: 31
+[End(242)] 1->4 (40, 1.000000), 22
+Link 1->4 add bandwidth: 41
+[End(249)] 2->1 (30, 1.000000), 22
+Link 2->1 add bandwidth: 31
+[End(250)] 1->5 (20, 1.000000), 22
+Link 1->5 add bandwidth: 21
+[End(256)] 4->5 (40, 1.000000), 22
+Link 4->5 add bandwidth: 41
+1 2 300
+1 4 289
+1 5 278
+2 1 258
+2 3 218
+2 5 259
+3 2 300
+3 4 300
+3 5 289
+4 1 300
+4 3 300
+4 5 289
+5 1 216
+5 2 289
+5 3 257
+[Accepted(257)] 4->2 (30, 1.000000)
+Link 4->5 remove bandwidth: 31
+Link 5->2 remove bandwidth: 31
+[Accepted(258)] 5->3 (20, 1.000000)
+Link 5->3 remove bandwidth: 21
+[Accepted(259)] 1->2 (10, 1.000000)
+Link 1->2 remove bandwidth: 11
+[Accepted(260)] 2->5 (10, 1.000000)
+Link 2->5 remove bandwidth: 11
+[Accepted(261)] 5->1 (40, 1.000000)
+Link 5->1 remove bandwidth: 41
+[Accepted(262)] 3->2 (20, 1.000000)
+Link 3->2 remove bandwidth: 21
+[Accepted(263)] 4->5 (30, 1.000000)
+Link 4->5 remove bandwidth: 31
+[Accepted(264)] 1->2 (30, 1.000000)
+Link 1->2 remove bandwidth: 31
+[Accepted(265)] 3->1 (20, 1.000000)
+Link 3->5 remove bandwidth: 21
+Link 5->1 remove bandwidth: 21
+
+Simulation Time: 23
+[End(222)] 4->2 (10, 1.000000), 23
+Link 4->5 add bandwidth: 11
+Link 5->2 add bandwidth: 11
+[End(231)] 5->1 (10, 1.000000), 23
+Link 5->1 add bandwidth: 11
+[End(236)] 2->5 (40, 1.000000), 23
+Link 2->5 add bandwidth: 41
+[End(239)] 2->1 (10, 1.000000), 23
+Link 2->1 add bandwidth: 11
+[End(245)] 5->1 (20, 1.000000), 23
+Link 5->1 add bandwidth: 21
+[End(246)] 2->3 (40, 1.000000), 23
+Link 2->3 add bandwidth: 41
+[End(248)] 5->1 (40, 1.000000), 23
+Link 5->1 add bandwidth: 41
+[End(253)] 2->1 (30, 1.000000), 23
+Link 2->1 add bandwidth: 31
+[End(254)] 2->4 (20, 1.000000), 23
+[End(255)] 1->4 (10, 1.000000), 23
+Link 1->4 add bandwidth: 11
+[End(258)] 5->3 (20, 1.000000), 23
+Link 5->3 add bandwidth: 21
+[End(260)] 2->5 (10, 1.000000), 23
+Link 2->5 add bandwidth: 11
+[End(262)] 3->2 (20, 1.000000), 23
+Link 3->2 add bandwidth: 21
+[End(263)] 4->5 (30, 1.000000), 23
+Link 4->5 add bandwidth: 31
+[End(265)] 3->1 (20, 1.000000), 23
+Link 3->5 add bandwidth: 21
+Link 5->1 add bandwidth: 21
+1 2 258
+1 4 300
+1 5 278
+2 1 300
+2 3 259
+2 5 300
+3 2 300
+3 4 300
+3 5 289
+4 1 300
+4 3 300
+4 5 269
+5 1 248
+5 2 269
+5 3 257
+[Accepted(266)] 2->1 (10, 1.000000)
+Link 2->1 remove bandwidth: 11
+[Accepted(267)] 1->5 (40, 1.000000)
+Link 1->5 remove bandwidth: 41
+[Accepted(268)] 2->5 (20, 1.000000)
+Link 2->5 remove bandwidth: 21
+[Accepted(269)] 5->3 (40, 1.000000)
+Link 5->3 remove bandwidth: 41
+[Accepted(270)] 3->2 (30, 1.000000)
+Link 3->2 remove bandwidth: 32
+[Accepted(271)] 5->1 (40, 1.000000)
+Link 5->1 remove bandwidth: 42
+
+Simulation Time: 24
+[End(257)] 4->2 (30, 1.000000), 24
+Link 4->5 add bandwidth: 31
+Link 5->2 add bandwidth: 31
+[End(259)] 1->2 (10, 1.000000), 24
+Link 1->2 add bandwidth: 11
+[End(264)] 1->2 (30, 1.000000), 24
+Link 1->2 add bandwidth: 31
+[End(266)] 2->1 (10, 1.000000), 24
+Link 2->1 add bandwidth: 11
+[End(267)] 1->5 (40, 1.000000), 24
+Link 1->5 add bandwidth: 41
+1 2 300
+1 4 300
+1 5 278
+2 1 300
+2 3 259
+2 5 279
+3 2 268
+3 4 300
+3 5 289
+4 1 300
+4 3 300
+4 5 300
+5 1 206
+5 2 300
+5 3 216
+[Accepted(272)] 4->3 (20, 1.000000)
+Link 4->5 remove bandwidth: 21
+Link 5->3 remove bandwidth: 21
+[Accepted(273)] 5->2 (30, 1.000000)
+Link 5->2 remove bandwidth: 31
+[Accepted(274)] 2->1 (40, 1.000000)
+Link 2->1 remove bandwidth: 41
+[Accepted(275)] 3->5 (20, 1.000000)
+Link 3->5 remove bandwidth: 21
+[Accepted(276)] 2->5 (20, 1.000000)
+Link 2->5 remove bandwidth: 21
+[Accepted(277)] 4->3 (40, 1.000000)
+Link 4->5 remove bandwidth: 41
+Link 5->3 remove bandwidth: 41
+[Accepted(278)] 5->3 (10, 1.000000)
+Link 5->3 remove bandwidth: 11
+[Accepted(279)] 4->3 (20, 1.000000)
+Link 4->5 remove bandwidth: 21
+Link 5->3 remove bandwidth: 21
+[Accepted(280)] 4->1 (10, 1.000000)
+Link 4->1 remove bandwidth: 10
+Link 4->5 remove bandwidth: 1
+Link 5->1 remove bandwidth: 1
+[Accepted(281)] 3->2 (20, 1.000000)
+Link 3->2 remove bandwidth: 21
+[Accepted(282)] 5->4 (20, 1.000000)
+Link 3->4 remove bandwidth: 21
+Link 5->3 remove bandwidth: 21
+[Accepted(283)] 1->5 (40, 1.000000)
+Link 1->5 remove bandwidth: 42
+[Accepted(284)] 4->1 (40, 1.000000)
+Link 4->1 remove bandwidth: 40
+Link 4->5 remove bandwidth: 1
+Link 5->1 remove bandwidth: 1
+[Accepted(285)] 5->1 (10, 1.000000)
+Link 5->1 remove bandwidth: 11
+[Accepted(286)] 1->4 (10, 1.000000)
+Link 1->4 remove bandwidth: 11
+
+Simulation Time: 25
+[End(234)] 3->1 (10, 1.000000), 25
+Link 3->5 add bandwidth: 11
+Link 5->1 add bandwidth: 11
+[End(252)] 2->3 (40, 1.000000), 25
+Link 2->3 add bandwidth: 41
+[End(261)] 5->1 (40, 1.000000), 25
+Link 5->1 add bandwidth: 41
+[End(268)] 2->5 (20, 1.000000), 25
+Link 2->5 add bandwidth: 21
+[End(272)] 4->3 (20, 1.000000), 25
+Link 4->5 add bandwidth: 21
+Link 5->3 add bandwidth: 21
+[End(273)] 5->2 (30, 1.000000), 25
+Link 5->2 add bandwidth: 31
+[End(276)] 2->5 (20, 1.000000), 25
+Link 2->5 add bandwidth: 21
+[End(278)] 5->3 (10, 1.000000), 25
+Link 5->3 add bandwidth: 11
+[End(280)] 4->1 (10, 1.000000), 25
+Link 4->1 add bandwidth: 10
+Link 4->5 add bandwidth: 1
+Link 5->1 add bandwidth: 1
+[End(281)] 3->2 (20, 1.000000), 25
+Link 3->2 add bandwidth: 21
+1 2 300
+1 4 289
+1 5 236
+2 1 259
+2 3 300
+2 5 300
+3 2 268
+3 4 279
+3 5 279
+4 1 260
+4 3 300
+4 5 237
+5 1 246
+5 2 300
+5 3 133
+[Accepted(287)] 3->5 (10, 1.000000)
+Link 3->5 remove bandwidth: 11
+[Accepted(288)] 2->3 (10, 1.000000)
+Link 2->3 remove bandwidth: 11
+[Accepted(289)] 2->5 (30, 1.000000)
+Link 2->5 remove bandwidth: 31
+[Accepted(290)] 5->3 (10, 1.000000)
+Link 5->3 remove bandwidth: 11
+[Accepted(291)] 3->2 (40, 1.000000)
+Link 3->2 remove bandwidth: 41
+[Accepted(292)] 4->5 (10, 1.000000)
+Link 4->5 remove bandwidth: 11
+
+Simulation Time: 26
+[Link repaired] 5->4
+[End(251)] 5->3 (20, 1.000000), 26
+Link 5->3 add bandwidth: 21
+[End(269)] 5->3 (40, 1.000000), 26
+Link 5->3 add bandwidth: 41
+[End(274)] 2->1 (40, 1.000000), 26
+Link 2->1 add bandwidth: 41
+[End(275)] 3->5 (20, 1.000000), 26
+Link 3->5 add bandwidth: 21
+[End(277)] 4->3 (40, 1.000000), 26
+Link 4->5 add bandwidth: 41
+Link 5->3 add bandwidth: 41
+[End(279)] 4->3 (20, 1.000000), 26
+Link 4->5 add bandwidth: 21
+Link 5->3 add bandwidth: 21
+[End(282)] 5->4 (20, 1.000000), 26
+Link 3->4 add bandwidth: 21
+Link 5->3 add bandwidth: 21
+[End(284)] 4->1 (40, 1.000000), 26
+Link 4->1 add bandwidth: 40
+Link 4->5 add bandwidth: 1
+Link 5->1 add bandwidth: 1
+[End(285)] 5->1 (10, 1.000000), 26
+Link 5->1 add bandwidth: 11
+[End(288)] 2->3 (10, 1.000000), 26
+Link 2->3 add bandwidth: 11
+[End(290)] 5->3 (10, 1.000000), 26
+Link 5->3 add bandwidth: 11
+[End(291)] 3->2 (40, 1.000000), 26
+Link 3->2 add bandwidth: 41
+[End(292)] 4->5 (10, 1.000000), 26
+Link 4->5 add bandwidth: 11
+1 2 300
+1 4 289
+1 5 236
+2 1 300
+2 3 300
+2 5 269
+3 2 268
+3 4 300
+3 5 289
+4 1 300
+4 3 300
+4 5 300
+5 1 258
+5 2 300
+5 3 278
+5 4 300
+[Accepted(293)] 1->3 (20, 1.000000)
+Link 1->5 remove bandwidth: 21
+Link 5->3 remove bandwidth: 21
+[Accepted(294)] 1->4 (20, 1.000000)
+Link 1->4 remove bandwidth: 21
+[Accepted(295)] 2->4 (20, 1.000000)
+Link 2->5 remove bandwidth: 21
+Link 5->4 remove bandwidth: 21
+[Accepted(296)] 5->1 (20, 1.000000)
+Link 5->1 remove bandwidth: 21
+[Accepted(297)] 5->4 (10, 1.000000)
+Link 5->4 remove bandwidth: 11
+[Accepted(298)] 1->5 (10, 1.000000)
+Link 1->5 remove bandwidth: 11
+[Accepted(299)] 1->4 (30, 1.000000)
+Link 1->4 remove bandwidth: 31
+[Accepted(300)] 1->3 (20, 1.000000)
+Link 1->5 remove bandwidth: 21
+Link 5->3 remove bandwidth: 21
+
+Simulation Time: 27
+[End(247)] 1->3 (20, 1.000000), 27
+Link 1->5 add bandwidth: 22
+Link 5->3 add bandwidth: 22
+[End(270)] 3->2 (30, 1.000000), 27
+Link 3->2 add bandwidth: 32
+[End(271)] 5->1 (40, 1.000000), 27
+Link 5->1 add bandwidth: 42
+[End(283)] 1->5 (40, 1.000000), 27
+Link 1->5 add bandwidth: 42
+[End(286)] 1->4 (10, 1.000000), 27
+Link 1->4 add bandwidth: 11
+[End(289)] 2->5 (30, 1.000000), 27
+Link 2->5 add bandwidth: 31
+[End(293)] 1->3 (20, 1.000000), 27
+Link 1->5 add bandwidth: 21
+Link 5->3 add bandwidth: 21
+[End(295)] 2->4 (20, 1.000000), 27
+Link 2->5 add bandwidth: 21
+Link 5->4 add bandwidth: 21
+[End(297)] 5->4 (10, 1.000000), 27
+Link 5->4 add bandwidth: 11
+[End(300)] 1->3 (20, 1.000000), 27
+Link 1->5 add bandwidth: 21
+Link 5->3 add bandwidth: 21
+1 2 300
+1 4 248
+1 5 289
+2 1 300
+2 3 300
+2 5 300
+3 2 300
+3 4 300
+3 5 289
+4 1 300
+4 3 300
+4 5 300
+5 1 279
+5 2 300
+5 3 300
+5 4 300
+[Accepted(301)] 4->3 (40, 1.000000)
+Link 4->5 remove bandwidth: 41
+Link 5->3 remove bandwidth: 41
+[Accepted(302)] 2->3 (20, 1.000000)
+Link 2->3 remove bandwidth: 21
+[Accepted(303)] 1->5 (20, 1.000000)
+Link 1->5 remove bandwidth: 21
+[Accepted(304)] 5->2 (20, 1.000000)
+Link 5->2 remove bandwidth: 21
+[Accepted(305)] 3->4 (40, 1.000000)
+Link 3->4 remove bandwidth: 40
+Link 3->5 remove bandwidth: 1
+Link 5->4 remove bandwidth: 1
+[Accepted(306)] 3->5 (10, 1.000000)
+Link 3->5 remove bandwidth: 11
+[Accepted(307)] 2->5 (10, 1.000000)
+Link 2->5 remove bandwidth: 11
+[Accepted(308)] 1->5 (30, 1.000000)
+Link 1->5 remove bandwidth: 31
+[Accepted(309)] 5->2 (40, 1.000000)
+Link 5->2 remove bandwidth: 41
+[Accepted(310)] 1->5 (10, 1.000000)
+Link 1->5 remove bandwidth: 11
+
+Simulation Time: 28
+[Link failed] 3->4
+Link 3->4 add bandwidth: 40
+[Bandwidth Lowering(305)] 3->4 (40, 1.000000)->1
+[End(299)] 1->4 (30, 1.000000), 28
+Link 1->4 add bandwidth: 31
+[End(302)] 2->3 (20, 1.000000), 28
+Link 2->3 add bandwidth: 21
+[End(303)] 1->5 (20, 1.000000), 28
+Link 1->5 add bandwidth: 21
+[End(305)] 3->4 (40, 1.000000), 28
+Link 3->5 add bandwidth: 1
+Link 5->4 add bandwidth: 1
+[End(309)] 5->2 (40, 1.000000), 28
+Link 5->2 add bandwidth: 41
+1 2 300
+1 4 279
+1 5 247
+2 1 300
+2 3 300
+2 5 289
+3 2 300
+3 5 278
+4 1 300
+4 3 300
+4 5 259
+5 1 279
+5 2 279
+5 3 259
+5 4 300
+[Accepted(311)] 4->1 (40, 1.000000)
+Link 4->1 remove bandwidth: 40
+Link 4->5 remove bandwidth: 1
+Link 5->1 remove bandwidth: 1
+[Accepted(312)] 1->2 (20, 1.000000)
+Link 1->2 remove bandwidth: 21
+[Accepted(313)] 4->5 (40, 1.000000)
+Link 4->5 remove bandwidth: 41
+[Accepted(314)] 1->3 (30, 1.000000)
+Link 1->5 remove bandwidth: 32
+Link 5->3 remove bandwidth: 32
+[Accepted(315)] 5->2 (40, 1.000000)
+Link 5->2 remove bandwidth: 41
+[Accepted(316)] 3->1 (10, 1.000000)
+Link 3->5 remove bandwidth: 11
+Link 5->1 remove bandwidth: 11
+[Accepted(317)] 2->5 (10, 1.000000)
+Link 2->5 remove bandwidth: 11
+[Accepted(318)] 4->1 (30, 1.000000)
+Link 4->1 remove bandwidth: 30
+Link 4->5 remove bandwidth: 1
+Link 5->1 remove bandwidth: 1
+[Accepted(319)] 3->2 (20, 1.000000)
+Link 3->2 remove bandwidth: 21
+
+Simulation Time: 29
+[End(287)] 3->5 (10, 1.000000), 29
+Link 3->5 add bandwidth: 11
+[End(296)] 5->1 (20, 1.000000), 29
+Link 5->1 add bandwidth: 21
+[End(301)] 4->3 (40, 1.000000), 29
+Link 4->5 add bandwidth: 41
+Link 5->3 add bandwidth: 41
+[End(304)] 5->2 (20, 1.000000), 29
+Link 5->2 add bandwidth: 21
+[End(306)] 3->5 (10, 1.000000), 29
+Link 3->5 add bandwidth: 11
+[End(307)] 2->5 (10, 1.000000), 29
+Link 2->5 add bandwidth: 11
+[End(308)] 1->5 (30, 1.000000), 29
+Link 1->5 add bandwidth: 31
+[End(315)] 5->2 (40, 1.000000), 29
+Link 5->2 add bandwidth: 41
+[End(316)] 3->1 (10, 1.000000), 29
+Link 3->5 add bandwidth: 11
+Link 5->1 add bandwidth: 11
+1 2 279
+1 4 279
+1 5 246
+2 1 300
+2 3 300
+2 5 289
+3 2 279
+3 5 300
+4 1 230
+4 3 300
+4 5 257
+5 1 298
+5 2 300
+5 3 268
+5 4 300
+[Accepted(320)] 3->4 (30, 1.000000)
+Link 3->5 remove bandwidth: 32
+Link 5->4 remove bandwidth: 32
+[Accepted(321)] 5->4 (40, 1.000000)
+Link 5->4 remove bandwidth: 41
+[Accepted(322)] 1->3 (20, 1.000000)
+Link 1->5 remove bandwidth: 21
+Link 5->3 remove bandwidth: 21
