@@ -194,7 +194,6 @@ begin
   active_traffic_list.delete_if { |active_traffic|
     if active_traffic.end_time <= time
       #回線使用終了
-      write_log(sprintf("[End(%d)] %d->%d (%d, %f), %d\n", active_traffic.traffic.id, active_traffic.traffic.start_node, active_traffic.traffic.end_node, active_traffic.traffic.bandwidth, active_traffic.traffic.quality, active_traffic.end_time))
       #使用帯域幅解放
       expected_bandwidth = active_traffic.traffic.bandwidth * active_traffic.traffic.quality #帯域幅期待値
       total_bandwidth = 0 #動作中リンクの合計帯域幅
@@ -208,6 +207,9 @@ begin
 
       if total_bandwidth >= expected_bandwidth
         bandwidth_achived_demand += 1
+        write_log(sprintf("[End(%d)] %d->%d (%d, %f), %d\n", active_traffic.traffic.id, active_traffic.traffic.start_node, active_traffic.traffic.end_node, active_traffic.traffic.bandwidth, active_traffic.traffic.quality, active_traffic.end_time))
+      else
+        write_log(sprintf("[End with Bandwidth Lowering(%d)] %d->%d (%d, %f)->%d, %d\n", active_traffic.traffic.id, active_traffic.traffic.start_node, active_traffic.traffic.end_node, active_traffic.traffic.bandwidth, active_traffic.traffic.quality, total_bandwidth, active_traffic.end_time))
       end
       next true
     else
@@ -307,7 +309,6 @@ begin
   active_traffic_list2.delete_if { |active_traffic|
     if active_traffic.end_time <= time
       #回線使用終了
-      write_log2(sprintf("[End(%d)] %d->%d (%d, %f), %d\n", active_traffic.traffic.id, active_traffic.traffic.start_node, active_traffic.traffic.end_node, active_traffic.traffic.bandwidth, active_traffic.traffic.quality, active_traffic.end_time))
       #使用帯域幅解放
       expected_bandwidth = active_traffic.traffic.bandwidth * active_traffic.traffic.quality #帯域幅期待値
       total_bandwidth = 0 #動作中リンクの合計帯域幅
@@ -321,6 +322,9 @@ begin
 
       if total_bandwidth >= expected_bandwidth
         bandwidth_achived_demand2 += 1
+        write_log2(sprintf("[End(%d)] %d->%d (%d, %f), %d\n", active_traffic.traffic.id, active_traffic.traffic.start_node, active_traffic.traffic.end_node, active_traffic.traffic.bandwidth, active_traffic.traffic.quality, active_traffic.end_time))
+      else
+        write_log2(sprintf("[End with Bandwidth Lowering(%d)] %d->%d (%d, %f)->%d, %d\n", active_traffic.traffic.id, active_traffic.traffic.start_node, active_traffic.traffic.end_node, active_traffic.traffic.bandwidth, active_traffic.traffic.quality, total_bandwidth, active_traffic.end_time))
       end
       next true
     else
@@ -418,20 +422,16 @@ begin
   # トラフィックリストから処理済みトラフィックを削除
   traffic_list.shift
 end while traffic_list.size > 0 || active_traffic_list.size > 0
-write_log(sprintf("Blocked demand:%d(%d%%)\nTotal bandwidth: %d\nBlocked bandwidth: %d\nBandwidth achieved demand: %d(%d%%)\n", blocked_demand, blocked_demand*100/TOTAL_TRAFFIC, total_requested_bandwidth, blocked_bandwidth, bandwidth_achived_demand, bandwidth_achived_demand*100/TOTAL_TRAFFIC))
-write_log2(sprintf("Blocked demand:%d(%d%%)\nTotal bandwidth: %d\nBlocked bandwidth: %d\nBandwidth achieved demand: %d(%d%%)\n", blocked_demand2, blocked_demand2*100/TOTAL_TRAFFIC, total_requested_bandwidth, blocked_bandwidth2, bandwidth_achived_demand2, bandwidth_achived_demand2*100/TOTAL_TRAFFIC))
 
-=begin
-a = Array.new(1000, 0)
-1000.times do
-#  a[random.poisson(10)] += 1
-  a[random.exponential(HOLDING_TIME - 1).round + 1] += 1
-end
-
-mean = 0
-1000.times do |i|
-  printf("%d %s\n", i, '+'*a[i])
-  mean += i * a[i]
-end
-puts mean.to_f/1000
-=end
+# シミュレーション終了
+write_log(sprintf("Blocked demand:%d(%d%%)\nTotal bandwidth: %d\nBlocked bandwidth: %d\nBandwidth achieved demand: %d(%d%%)\n", blocked_demand, blocked_demand*100/TOTAL_TRAFFIC, total_requested_bandwidth, blocked_bandwidth, bandwidth_achived_demand, bandwidth_achived_demand*100/(TOTAL_TRAFFIC-blocked_demand)))
+write_log2(sprintf("Blocked demand:%d(%d%%)\nTotal bandwidth: %d\nBlocked bandwidth: %d\nBandwidth achieved demand: %d(%d%%)\n", blocked_demand2, blocked_demand2*100/TOTAL_TRAFFIC, total_requested_bandwidth, blocked_bandwidth2, bandwidth_achived_demand2, bandwidth_achived_demand2*100/(TOTAL_TRAFFIC-blocked_demand2)))
+result_file = File.open(RESULT_FILE, "a")
+result_file.print("\n")
+result_file.print(sprintf("Condition: Traffic demand: %d, Holding time: %d, Total traffic: %d, Max route: %d, Avg repair time: %d\n", define.traffic_demand, define.holding_time, define.total_traffic, define.max_route, define.average_repaired_time))
+result_file.print("Propose\n")
+result_file.print(sprintf("Blocked demand:%d(%d%%)\nTotal bandwidth: %d\nBlocked bandwidth: %d\nBandwidth achieved demand: %d(%d%%)\n", blocked_demand, blocked_demand*100/TOTAL_TRAFFIC, total_requested_bandwidth, blocked_bandwidth, bandwidth_achived_demand, bandwidth_achived_demand*100/(TOTAL_TRAFFIC-blocked_demand)))
+result_file.print("minCostFlow\n")
+result_file.print(sprintf("Blocked demand:%d(%d%%)\nTotal bandwidth: %d\nBlocked bandwidth: %d\nBandwidth achieved demand: %d(%d%%)\n", blocked_demand2, blocked_demand2*100/TOTAL_TRAFFIC, total_requested_bandwidth, blocked_bandwidth2, bandwidth_achived_demand2, bandwidth_achived_demand2*100/(TOTAL_TRAFFIC-blocked_demand2)))
+result_file.print("\n")
+result_file.close
