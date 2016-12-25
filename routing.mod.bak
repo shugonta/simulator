@@ -32,7 +32,10 @@ s.t. SOURCE{k in K, i in V: i = p}:
      sum{j in V: (i,j) in E} (x[k, i, j]) - sum{j in V: (j, i) in E} (x[k, j, i]) = 1;     
 
 s.t. CAPACITY{(i,j) in E}:
-     0 <= sum{k in K} ( y[k, i, j] ) <= min(B,c[i, j]);
+     0 <= sum{k in K} ( y[k, i, j] ) <= c[i, j];
+
+s.t. ROUTE{k in K}:
+     b[k] <= B;
 
 s.t. REQCAPACITY: sum{k in K} (b[k]) >= B;
 

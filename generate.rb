@@ -8,15 +8,15 @@ def get_bandwidth_rand
   i = rand(0...4)
   case i
     when 0 then
-      return 10
+      return 1
     when 1 then
-      return 20
+      return 2
     when 2 then
-      return 30
+      return 3
     when 3 then
-      return 40
+      return 4
     else
-      return 10
+      return 1
   end
 end
 
@@ -33,13 +33,17 @@ def get_nodes_rand(node_size)
 end
 
 def get_failure_rate_rand
-  rand(0..0.03)
-end
-
-def write_log(message)
-  log_file = File.open(LOG_FILE, "a")
-  log_file.print(message)
-  log_file.close
+  i = rand(0...3)
+  case i
+    when 0 then
+      return 0.01
+    when 1 then
+      return 0.05
+    when 2 then
+      return 0.1
+    else
+      return 0.01
+  end
 end
 
 def load_topology(filepath, link_list)
@@ -52,7 +56,7 @@ def load_topology(filepath, link_list)
       link_list=Array.new(node_size).map! { Array.new }
     else
       if (match = topology_line.match(/(\d+)\s(\d+)\s(\d+)/))!= nil
-        link_list[match[1].to_i-1][match[2].to_i-1] = Link.new(match[1].to_i, match[2].to_i, match[3].to_i, 300, get_failure_rate_rand, 0)
+        link_list[match[1].to_i-1][match[2].to_i-1] = Link.new(match[1].to_i, match[2].to_i, match[3].to_i, 30, get_failure_rate_rand, 0)
       end
     end
     i = i.succ
@@ -88,12 +92,9 @@ end
 Link = Struct.new(:start_node, :end_node, :distance, :bandwidth, :failure_rate, :failure_status)
 Traffic = Struct.new(:id, :holding_time, :bandwidth, :quality, :start_node, :end_node)
 ActiveTraffic = Struct.new(:end_time, :traffic, :routes)
+Define = Struct.new(:traffic_demand, :holding_time, :total_traffic, :max_route, :average_repaired_time)
 
-GLPK_PATH = "C:\\Users\\shugonta\\Documents\\gusek\\glpsol.exe"
 TOPOLOGY_FILE = 'topology.txt'
-DATA_FILE = "routing_test.dat"
-OUTPUT_FILE = "routing_test.out"
-LOG_FILE = "log.txt"
 
 # トポロジー読み込み
 node_size = 0
@@ -107,12 +108,13 @@ node_size = link_list.size
 
 
 #トラフィック要求発生
-TRAFFIC_DEMAND = 25 #一秒当たりの平均トラフィック発生量
+TRAFFIC_DEMAND = 3 #一秒当たりの平均トラフィック発生量
 HOLDING_TIME = 4 #平均トラフィック保持時間
 TOTAL_TRAFFIC = 1000 #総トラフィック量
 MAX_ROUTE = 3 #一つの要求に使用される最大ルート数
 AVERAGE_REPAIRED_TIME = 5
 
+define = Define.new(TRAFFIC_DEMAND, HOLDING_TIME, TOTAL_TRAFFIC, MAX_ROUTE, AVERAGE_REPAIRED_TIME)
 
 traffic_list = []
 traffic_count = 0
@@ -136,9 +138,13 @@ puts second
 # 条件保存
 link_list_str = Marshal.dump(link_list)
 traffic_list_str = Marshal.dump(traffic_list)
+define_str = Marshal.dump(define)
 f = File.open('link_list.txt','wb')
 f.print(link_list_str)
 f.close
 f = File.open('traffic_list.txt','wb')
 f.print(traffic_list_str)
+f.close
+f = File.open('define.txt','wb')
+f.print(define_str)
 f.close

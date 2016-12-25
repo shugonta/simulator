@@ -44,20 +44,19 @@ end
 Link = Struct.new(:start_node, :end_node, :distance, :bandwidth, :failure_rate, :failure_status)
 Traffic = Struct.new(:id, :holding_time, :bandwidth, :quality, :start_node, :end_node)
 ActiveTraffic = Struct.new(:end_time, :traffic, :routes)
-Define = Struct.new(:traffic_demand, :holding_time, :total_traffic, :max_route, :average_repaired_time)
 
-# GLPK_PATH = "C:\\Users\\shugonta\\Documents\\gusek\\glpsol.exe"
-GLPK_PATH = "glpsol"
+GLPK_PATH = "C:\\Users\\shugonta\\Documents\\gusek\\glpsol.exe"
 DATA_FILE = "routing_test.dat"
 OUTPUT_FILE = "routing_test.out"
 LOG_FILE = "log.txt"
 LOG_FILE2 = "log2.txt"
-RESULT_FILE = "result.txt"
-CPLEX_PATH = "cplex"
-CPLEX_LP = "cplex.lp"
-CPLEX_SCRIPT = "cplex.txt"
 
 #トラフィック要求発生
+TRAFFIC_DEMAND = 25 #一秒当たりの平均トラフィック発生量
+HOLDING_TIME = 4 #平均トラフィック保持時間
+TOTAL_TRAFFIC = 1000 #総トラフィック量
+MAX_ROUTE = 3 #一つの要求に使用される最大ルート数
+AVERAGE_REPAIRED_TIME = 5
 
 # 条件復元
 f = File.open('link_list.txt', 'rb')
@@ -66,14 +65,6 @@ f.close
 f = File.open('traffic_list.txt', 'rb')
 traffic_list = Marshal.load(f)
 f.close
-f = File.open('define.txt', 'rb')
-define = Marshal.load(f)
-f.close
-
-TOTAL_TRAFFIC = define.total_traffic #総トラフィック量
-MAX_ROUTE = define.max_route #一つの要求に使用される最大ルート数
-AVERAGE_REPAIRED_TIME = define.average_repaired_time
-
 
 total_requested_bandwidth = 0
 traffic_list.each { |traffic_list_sec|
@@ -253,54 +244,50 @@ begin
       data_file.puts(";\n")
       data_file.close
       #GLPK実行
-      glpk_path = GLPK_PATH + (" -m routing.mod -o " << OUTPUT_FILE << " -d " << DATA_FILE << " --wlpt " << CPLEX_LP << " --check")
-      o, e, s = Open3.capture3(glpk_path)
-      if o.match(/^Model has been successfully generated$/) != nil
-        cplex_path = CPLEX_PATH + (" < " << CPLEX_SCRIPT)
-        o2, e2, s2 = Open3.capture3(cplex_path)
-        if o2.match(/Integer optimal solution/) != nil
-          #最適解発見
-          route=Array.new(MAX_ROUTE).map! { Array.new }
-          o2.scan(/^y\((\d+),(\d+),(\d+)\)\s+(\d+\.\d+)/) do |route_num, start_node, end_node, cost|
-            if link_list[start_node.to_i - 1][end_node.to_i - 1] != nil
-              if cost.to_i > 0
-                route[route_num.to_i - 1] << Link.new(start_node.to_i, end_node.to_i, link_list[start_node.to_i - 1][end_node.to_i - 1].distance, cost.to_i, link_list[start_node.to_i - 1][end_node.to_i - 1].failure_rate, 0)
+      path = GLPK_PATH + (" -m routing.mod -o " << OUTPUT_FILE << " -d " << DATA_FILE)
+      o, e, s = Open3.capture3(path)
+      if o.match(/^INTEGER\sOPTIMAL\sSOLUTION\sFOUND$/) != nil
+        #最適解発見
+        out_file = File.open(OUTPUT_FILE)
+        route=Array.new(MAX_ROUTE).map! { Array.new }
+        out_file.each_line do |line|
+          match = line.match(/\s+\d+ y\[(\d+),(\d+),(\d+)\]\s+\*\s+?(\d+)/)
+          if match != nil
+            if link_list[match[2].to_i - 1][match[3].to_i - 1] != nil
+              if match[4].to_i > 0
+                route[match[1].to_i - 1] << Link.new(match[2].to_i, match[3].to_i, link_list[match[2].to_i - 1][match[3].to_i - 1].distance, match[4].to_i, link_list[match[2].to_i - 1][match[3].to_i - 1].failure_rate, 0)
               end
             else
-              write_log(sprintf("[Error] link %d->%d not found\n", start_node.to_i, end_node.to_i))
+              write_log(sprintf("[Error] link %d->%d not found\n", match[2].to_i, match[3].to_i))
             end
           end
-          write_log(sprintf("[Accepted(%d)] %d->%d (%d, %f)\n", traffic_item.id, traffic_item.start_node, traffic_item.end_node, traffic_item.bandwidth, traffic_item.quality))
-          # ルート使用処理
-          route_cnt = 0
-          active_traffic = ActiveTraffic.new(time + traffic_item.holding_time, traffic_item.clone, [])
-          route.each { |route_item|
-            if route_item != nil && route_item.size > 0
-              route_cnt = route_cnt.succ
-              route_item.each { |link|
-                current_link_list[link.start_node - 1][link.end_node - 1].bandwidth -= link.bandwidth #現在使用可能なリンクリストから帯域削除
-                write_log(sprintf("Link %d->%d remove bandwidth: %d\n", link.start_node, link.end_node, link.bandwidth))
-              }
-              active_traffic.routes << route_item
-            end
-          }
-          active_traffic_list << active_traffic
-        else
-          #最適解なし
-          puts "Blocked"
-          write_log(sprintf("[Blocked(%d)] %d->%d (%d, %f)\n", traffic_item.id, traffic_item.start_node, traffic_item.end_node, traffic_item.bandwidth, traffic_item.quality))
-          blocked_bandwidth += traffic_item.bandwidth
-          blocked_demand = blocked_demand.succ
         end
+        write_log(sprintf("[Accepted(%d)] %d->%d (%d, %f)\n", traffic_item.id, traffic_item.start_node, traffic_item.end_node, traffic_item.bandwidth, traffic_item.quality))
+        # ルート使用処理
+        route_cnt = 0
+        active_traffic = ActiveTraffic.new(time + traffic_item.holding_time, traffic_item.clone, [])
+        route.each { |route_item|
+          if route_item != nil && route_item.size > 0
+            route_cnt = route_cnt.succ
+            route_item.each { |link|
+              current_link_list[link.start_node - 1][link.end_node - 1].bandwidth -= link.bandwidth #現在使用可能なリンクリストから帯域削除
+              write_log(sprintf("Link %d->%d remove bandwidth: %d\n", link.start_node, link.end_node, link.bandwidth))
+            }
+            active_traffic.routes << route_item
+          end
+        }
+        active_traffic_list << active_traffic
       else
-        #   モデル異常
-        puts 'Model Error'
-        puts o
-        exit
+        #最適解なし
+        puts "Blocked"
+        write_log(sprintf("[Blocked(%d)] %d->%d (%d, %f)\n", traffic_item.id, traffic_item.start_node, traffic_item.end_node, traffic_item.bandwidth, traffic_item.quality))
+        blocked_bandwidth += traffic_item.bandwidth
+        blocked_demand = blocked_demand.succ
       end
       # puts o
     }
   end
+exit
   # 最小費用流
 
   #回線使用終了判定
@@ -365,50 +352,46 @@ begin
       # data_file.print(reliability_str)
       data_file.puts(";\n")
       data_file.close
-      glpk_path = GLPK_PATH + (" -m routing_mincostflow.mod -o " << OUTPUT_FILE << " -d " << DATA_FILE << " --wlpt " << CPLEX_LP << " --check")
-      o, e, s = Open3.capture3(glpk_path)
-      if o.match(/^Model has been successfully generated$/) != nil
-        cplex_path = CPLEX_PATH + (" < " << CPLEX_SCRIPT)
-        o2, e2, s2 = Open3.capture3(cplex_path)
-        if o2.match(/Integer optimal solution/) != nil
-          #最適解発見
-          route=Array.new(MAX_ROUTE).map! { Array.new }
-          o2.scan(/^y\((\d+),(\d+),(\d+)\)\s+(\d+\.\d+)/) do |route_num, start_node, end_node, cost|
-            if link_list[start_node.to_i - 1][end_node.to_i - 1] != nil
-              if cost.to_i > 0
-                route[route_num.to_i - 1] << Link.new(start_node.to_i, end_node.to_i, link_list[start_node.to_i - 1][end_node.to_i - 1].distance, cost.to_i, link_list[start_node.to_i - 1][end_node.to_i - 1].failure_rate, 0)
+      #GLPK実行
+      path = GLPK_PATH + (" -m routing_mincostflow.mod -o " << OUTPUT_FILE << " -d " << DATA_FILE)
+      o, e, s = Open3.capture3(path)
+      if o.match(/^INTEGER\sOPTIMAL\sSOLUTION\sFOUND$/) != nil
+        #最適解発見
+        out_file = File.open(OUTPUT_FILE)
+        route=Array.new(MAX_ROUTE).map! { Array.new }
+        out_file.each_line do |line|
+          match = line.match(/\s+\d+ y\[(\d+),(\d+),(\d+)\]\s+\*\s+?(\d+)/)
+          if match != nil
+            if link_list[match[2].to_i - 1][match[3].to_i - 1] != nil
+              if match[4].to_i > 0
+                route[match[1].to_i - 1] << Link.new(match[2].to_i, match[3].to_i, link_list[match[2].to_i - 1][match[3].to_i - 1].distance, match[4].to_i, link_list[match[2].to_i - 1][match[3].to_i - 1].failure_rate, 0)
               end
             else
-              write_log2(sprintf("[Error] link %d->%d not found\n", start_node.to_i, end_node.to_i))
+              write_log2(sprintf("[Error] link %d->%d not found\n", match[2].to_i, match[3].to_i))
             end
           end
-          write_log2(sprintf("[Accepted(%d)] %d->%d (%d, %f)\n", traffic_item.id, traffic_item.start_node, traffic_item.end_node, traffic_item.bandwidth, traffic_item.quality))
-          # ルート使用処理
-          route_cnt = 0
-          active_traffic = ActiveTraffic.new(time + traffic_item.holding_time, traffic_item.clone, [])
-          route.each { |route_item|
-            if route_item != nil && route_item.size > 0
-              route_cnt = route_cnt.succ
-              route_item.each { |link|
-                current_link_list2[link.start_node - 1][link.end_node - 1].bandwidth -= link.bandwidth #現在使用可能なリンクリストから帯域削除
-                write_log2(sprintf("Link %d->%d remove bandwidth: %d\n", link.start_node, link.end_node, link.bandwidth))
-              }
-              active_traffic.routes << route_item
-            end
-          }
-          active_traffic_list2 << active_traffic
-        else
-          #最適解なし
-          puts "Blocked"
-          write_log2(sprintf("[Blocked(%d)] %d->%d (%d, %f)\n", traffic_item.id, traffic_item.start_node, traffic_item.end_node, traffic_item.bandwidth, traffic_item.quality))
-          blocked_bandwidth2 += traffic_item.bandwidth
-          blocked_demand2 = blocked_demand2.succ
         end
+        write_log2(sprintf("[Accepted(%d)] %d->%d (%d, %f)\n", traffic_item.id, traffic_item.start_node, traffic_item.end_node, traffic_item.bandwidth, traffic_item.quality))
+        # ルート使用処理
+        route_cnt = 0
+        active_traffic = ActiveTraffic.new(time + traffic_item.holding_time, traffic_item.clone, [])
+        route.each { |route_item|
+          if route_item != nil && route_item.size > 0
+            route_cnt = route_cnt.succ
+            route_item.each { |link|
+              current_link_list2[link.start_node - 1][link.end_node - 1].bandwidth -= link.bandwidth #現在使用可能なリンクリストから帯域削除
+              write_log2(sprintf("Link %d->%d remove bandwidth: %d\n", link.start_node, link.end_node, link.bandwidth))
+            }
+            active_traffic.routes << route_item
+          end
+        }
+        active_traffic_list2 << active_traffic
       else
-        #   モデル異常
-        puts 'Model Error'
-        puts o
-        exit
+        #最適解なし
+        puts "Blocked"
+        write_log2(sprintf("[Blocked(%d)] %d->%d (%d, %f)\n", traffic_item.id, traffic_item.start_node, traffic_item.end_node, traffic_item.bandwidth, traffic_item.quality))
+        blocked_bandwidth2 += traffic_item.bandwidth
+        blocked_demand2 = blocked_demand2.succ
       end
       # puts o
     }

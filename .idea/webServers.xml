@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="90dc438d-63af-409d-8ad6-d50170647b80" name="cplex" url="http://192.168.1.103">
+        <fileTransfer host="192.168.1.103" port="22" rootFolder="/home/shugonta/simulation" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
