@@ -10,11 +10,11 @@ def get_bandwidth_rand
     when 0 then
       return 1
     when 1 then
-      return 2
-    when 2 then
-      return 3
-    when 3 then
       return 4
+    when 2 then
+      return 8
+    when 3 then
+      return 16
     else
       return 1
   end
@@ -38,9 +38,9 @@ def get_failure_rate_rand
     when 0 then
       return 0.01
     when 1 then
-      return 0.05
+      return 0.03
     when 2 then
-      return 0.1
+      return 0.05
     else
       return 0.01
   end

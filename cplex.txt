@@ -1,0 +1,3 @@
+read cplex.lp
+optimize 
+display solution variables y*
