@@ -56,7 +56,7 @@ def load_topology(filepath, link_list)
       link_list=Array.new(node_size).map! { Array.new }
     else
       if (match = topology_line.match(/(\d+)\s(\d+)\s(\d+)/))!= nil
-        link_list[match[1].to_i-1][match[2].to_i-1] = Link.new(match[1].to_i, match[2].to_i, match[3].to_i, 30, get_failure_rate_rand, 0)
+        link_list[match[1].to_i-1][match[2].to_i-1] = Link.new(match[1].to_i, match[2].to_i, match[3].to_i, 100, get_failure_rate_rand, 0)
       end
     end
     i = i.succ
@@ -108,7 +108,7 @@ node_size = link_list.size
 
 
 #トラフィック要求発生
-TRAFFIC_DEMAND = 3 #一秒当たりの平均トラフィック発生量
+TRAFFIC_DEMAND = 20 #一秒当たりの平均トラフィック発生量
 HOLDING_TIME = 4 #平均トラフィック保持時間
 TOTAL_TRAFFIC = 1000 #総トラフィック量
 MAX_ROUTE = 3 #一つの要求に使用される最大ルート数

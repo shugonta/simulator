@@ -57,6 +57,19 @@ def show_links_wR(link_list, traffic_item)
   bandwidth_str
 end
 
+def get_failure_rate_rand
+  i = rand(0...3)
+  case i
+    when 0 then
+      return 0.01
+    when 1 then
+      return 0.03
+    when 2 then
+      return 0.05
+    else
+      return 0.01
+  end
+end
 
 # 構造体宣言
 Link = Struct.new(:start_node, :end_node, :distance, :bandwidth, :failure_rate, :failure_status)
@@ -231,13 +244,18 @@ begin
         else
           # リンク故障しているとき
           if is_repaired(AVERAGE_REPAIRED_TIME, link.failure_status)
+            new_failure_rate = get_failure_rate_rand
             # 復旧(使用帯域幅解放は実行済み)
+            # リンク故障率再生成
             write_log(sprintf("[Link repaired] %d->%d\n", link.start_node, link.end_node))
             link.failure_status = 0
+            link.failure_rate = new_failure_rate
             write_log2(sprintf("[Link repaired] %d->%d\n", current_link_list2[i][j].start_node, current_link_list2[i][j].end_node))
             current_link_list2[i][j].failure_status = 0
+            current_link_list2[i][j].failure_rate = new_failure_rate
             write_log3(sprintf("[Link repaired] %d->%d\n", current_link_list3[i][j].start_node, current_link_list3[i][j].end_node))
             current_link_list3[i][j].failure_status = 0
+            current_link_list3[i][j].failure_rate = new_failure_rate
           else
             # 故障時間加算
             link.failure_status += 1
