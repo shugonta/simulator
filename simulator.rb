@@ -296,6 +296,10 @@ begin
   write_log(show_links(current_link_list))
   if traffic_list.size > 0
     traffic_list[0].each { |traffic_item|
+      if traffic_item.id % (TOTAL_TRAFFIC / 100) == 0
+        puts traffic_item.id.to_s
+      end
+
       #GLPK用データファイル作成
       #GLPK変数定義
       data_file = File.open(DATA_FILE, "w")
