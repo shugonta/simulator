@@ -341,7 +341,7 @@ begin
       if o.match(/^Model has been successfully generated$/) != nil
         cplex_path = CPLEX_PATH + (" < " << CPLEX_SCRIPT)
         o2, e2, s2 = Open3.capture3(cplex_path)
-        if o2.match(/Integer optimal solution/) != nil
+        if o2.match(/Integer optimal/) != nil
           #最適解発見
           route=Array.new(MAX_ROUTE).map! { Array.new }
           o2.scan(/^y\((\d+),(\d+),(\d+)\)\s+(\d+\.\d+)/) do |route_num, start_node, end_node, cost|
@@ -458,7 +458,7 @@ begin
       if o.match(/^Model has been successfully generated$/) != nil
         cplex_path = CPLEX_PATH + (" < " << CPLEX_SCRIPT)
         o2, e2, s2 = Open3.capture3(cplex_path)
-        if o2.match(/Integer optimal solution/) != nil
+        if o2.match(/Integer optimal/) != nil
           #最適解発見
           route=Array.new(MAX_ROUTE).map! { Array.new }
           o2.scan(/^y\((\d+),(\d+),(\d+)\)\s+(\d+\.\d+)/) do |route_num, start_node, end_node, cost|
@@ -575,7 +575,7 @@ begin
         cplex_path = CPLEX_PATH + (" < " << CPLEX_SCRIPT)
         o2, e2, s2 = Open3.capture3(cplex_path)
         # write_log3(o2 + "\n")
-        if o2.match(/Integer optimal solution/) != nil
+        if o2.match(/Integer optimal/) != nil
           #最適解発見
           route=Array.new(MAX_ROUTE).map! { Array.new }
           o2.scan(/^y\((\d+),(\d+),(\d+)\)\s+(\d+\.\d+)/) do |route_num, start_node, end_node, cost|

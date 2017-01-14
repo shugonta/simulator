@@ -515,7 +515,7 @@ begin
               bandwidth = bandwidth * 2
             end
           else
-            write_log2(sprintf("[ExpectedBandwidthBlocked-MinCostFlow(%d-%d)] Bandwidth:%b\n", traffic_item.id, i, bandwidth))
+            write_log2(sprintf("[ExpectedBandwidthBlocked-MinCostFlow(%d-%d)] Bandwidth:%d\n", traffic_item.id, i, bandwidth))
             if max_not_achived_bandwidth == 0
               break
             else

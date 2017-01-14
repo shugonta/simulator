@@ -85,7 +85,8 @@ def load_topology(filepath, link_list)
       link_list=Array.new(node_size).map! { Array.new }
     else
       if (match = topology_line.match(/(\d+)\s(\d+)\s(\d+)\s([\d.]+)/))!= nil
-        link_list[match[1].to_i-1][match[2].to_i-1] = Link.new(match[1].to_i, match[2].to_i, match[3].to_i, 10000, match[4].to_f, 0)
+        # link_list[match[1].to_i-1][match[2].to_i-1] = Link.new(match[1].to_i, match[2].to_i, match[3].to_i, 10000, match[4].to_f, 0)
+        link_list[match[1].to_i-1][match[2].to_i-1] = Link.new(match[1].to_i, match[2].to_i, match[3].to_i, 10000, get_failure_rate_rand.to_f, 0)
       end
     end
     i = i.succ
@@ -110,32 +111,33 @@ CPLEX_PATH = "cplex"
 CPLEX_LP = "cplex.lp"
 CPLEX_SCRIPT = "cplex.txt"
 TOPOLOGY_FILE = 'topology_mesh_with_failure.txt'
-COUNT = 1
+COUNT = 100
 HOLDING_TIME = 1 #平均トラフィック保持時間
 MAX_ROUTE = 3 #一つの要求に使用される最大ルート数
-REPEAT_MAX = 8
+REPEAT_MAX = 16
 INT_MAX = 2147483647
 
 # トポロジー読み込み
 node_size = 0
 random = Random.new
 link_list = []
-link_list = load_topology(TOPOLOGY_FILE, link_list)
-node_size = link_list.size
 
 cost_propose_total = 0
 cost_mincostflow_total = 0
+cost_mincostflow_greedy_total = 0
 
 for i in 1..COUNT do
 #   トラフィック条件生成
+  link_list = load_topology(TOPOLOGY_FILE, link_list)
+  node_size = link_list.size
 #   nodes = get_nodes_rand(node_size)
   nodes =[1, 9]
-  # traffic_item = Traffic.new(0, random.exponential(HOLDING_TIME - 1).round + 1, get_bandwidth_rand, get_quality_rand, nodes[0], nodes[1])
+# traffic_item = Traffic.new(0, random.exponential(HOLDING_TIME - 1).round + 1, get_bandwidth_rand, get_quality_rand, nodes[0], nodes[1])
   traffic_item = Traffic.new(0, HOLDING_TIME, get_bandwidth_rand, get_quality_rand, nodes[0], nodes[1])
   write_log(show_links_wR(link_list, traffic_item))
-  #   提案手法実行
-  #GLPK用データファイル作成
-  #GLPK変数定義
+#   提案手法実行
+#GLPK用データファイル作成
+#GLPK変数定義
   data_file = File.open(DATA_FILE, "w")
   data_file.puts("param N := " << node_size.to_s << " ;")
   data_file.puts("param M := " << MAX_ROUTE.to_s << " ;")
@@ -147,7 +149,7 @@ for i in 1..COUNT do
   bandwidth_str = ""
   reliability_str = ""
   bandwidth_max = 0
-  #リンク、距離定義
+#リンク、距離定義
   link_list.each { |ary|
     ary.each { |link|
       if link != nil && link.failure_status == 0
@@ -169,8 +171,8 @@ for i in 1..COUNT do
   data_file.print(reliability_str)
   data_file.puts(";\n")
   data_file.close
-  #GLPK実行
-  glpk_path = GLPK_PATH + (" -m routing.mod -o " << OUTPUT_FILE << " -d " << DATA_FILE << " --wlpt " << CPLEX_LP << " --check")
+#GLPK実行
+  glpk_path = GLPK_PATH + (" -m routing_ver2.mod -o " << OUTPUT_FILE << " -d " << DATA_FILE << " --wlpt " << CPLEX_LP << " --check")
   o, e, s = Open3.capture3(glpk_path)
   if o.match(/^Model has been successfully generated$/) != nil
     cplex_path = CPLEX_PATH + (" < " << CPLEX_SCRIPT)
@@ -235,6 +237,7 @@ for i in 1..COUNT do
     data_file.puts("param p := " << traffic_item.start_node.to_s << " ;")
     data_file.puts("param q := " << traffic_item.end_node.to_s << " ;")
     data_file.puts("param B := " << bandwidth.to_s << " ;")
+    data_file.puts("param Bpre := " << traffic_item.bandwidth.to_s << " ;")
 # data_file.puts("param Q := " << 0.to_s << " ;")
     distance_str = ""
     bandwidth_str = ""
@@ -262,7 +265,7 @@ for i in 1..COUNT do
 # data_file.print(reliability_str)
     data_file.puts(";\n")
     data_file.close
-    glpk_path = GLPK_PATH + (" -m routing_mincostflow.mod -o " << OUTPUT_FILE << " -d " << DATA_FILE << " --wlpt " << CPLEX_LP << " --check")
+    glpk_path = GLPK_PATH + (" -m routing_mincostflow_ver2.mod -o " << OUTPUT_FILE << " -d " << DATA_FILE << " --wlpt " << CPLEX_LP << " --check")
     o, e, s = Open3.capture3(glpk_path)
     if o.match(/^Model has been successfully generated$/) != nil
       cplex_path = CPLEX_PATH + (" < " << CPLEX_SCRIPT)
@@ -272,6 +275,7 @@ for i in 1..COUNT do
           puts "No Objective"
           exit
         end
+        puts match[1] + "* 10^" + match[2]
         cost = (match[1].to_f * (10 ** match[2].to_i)).to_i
         puts cost.to_s
         #最適解発見
@@ -289,14 +293,17 @@ for i in 1..COUNT do
         # ルート使用処理
         route_cnt = 0
         expected_bandwidth = 0
+        # expected_bandwidth = bandwidth
         route.each { |route_item|
           if route_item != nil && route_item.size > 0
             route_cnt = route_cnt.succ
             write_log(route_item[0].bandwidth.to_s + ": ")
             route_reliability = 1
+            exp_fail = 0
             route_item.each { |link|
               write_log(sprintf("(%d->%d), ", link.start_node, link.end_node))
               route_reliability *= exp(-1 * link.failure_rate * traffic_item.holding_time).round(4)
+              # expected_bandwidth -= (1 - exp(-1 * link.failure_rate * traffic_item.holding_time).round(4)) * link.bandwidth
             }
             write_log("\n")
             expected_bandwidth += route_reliability * route_item[0].bandwidth
@@ -312,10 +319,15 @@ for i in 1..COUNT do
         else
           max_not_achived_bandwidth =[max_not_achived_bandwidth, bandwidth].max
         end
+        pre_bandwidth = bandwidth
         if min_achived_bandwidth != INT_MAX
           bandwidth = (max_not_achived_bandwidth + min_achived_bandwidth) / 2
         else
           bandwidth = bandwidth * 2
+        end
+        if bandwidth == pre_bandwidth
+          # 収束
+          break
         end
       else
         #最適解なし
@@ -332,14 +344,133 @@ for i in 1..COUNT do
   end
   write_log(sprintf("[FinalCost-MinCostFlow(%d-%d)] Cost: %d\n", i, j, cost_result))
   cost_mincostflow_total += cost_result
+
+
+# 最小費用流問題貪欲法
+  link_greedy = Marshal.load(Marshal.dump(link_list))
+  cost_greedy = 0
+  total_expected_bandwidth = 0
+  expected_bandwidth = 0
+  bandwidth = 0
+  j=1
+  while true do
+    delta_bandwidth = traffic_item.quality * traffic_item.bandwidth - total_expected_bandwidth
+    bandwidth = delta_bandwidth.ceil
+    expected_bandwidth = 0
+#GLPK用データファイル作成
+#GLPK変数定義
+    data_file = File.open(DATA_FILE, "w")
+    data_file.puts("param N := " << node_size.to_s << " ;")
+    data_file.puts("param M := " << MAX_ROUTE.to_s << " ;")
+    data_file.puts("param p := " << traffic_item.start_node.to_s << " ;")
+    data_file.puts("param q := " << traffic_item.end_node.to_s << " ;")
+    data_file.puts("param B := " << bandwidth.to_s << " ;")
+    data_file.puts("param Bpre := " << traffic_item.bandwidth.to_s << " ;")
+# data_file.puts("param Q := " << 0.to_s << " ;")
+    distance_str = ""
+    bandwidth_str = ""
+# reliability_str = ""
+    bandwidth_max = 0
+#リンク、距離定義
+    link_greedy.each { |ary|
+      ary.each { |link|
+        if link != nil && link.failure_status == 0
+          distance_str << link.start_node.to_s << " " << link.end_node.to_s << " " << link.distance.to_s << "\n"
+          bandwidth_str << link.start_node.to_s << " " << link.end_node.to_s << " " << [traffic_item.bandwidth, link.bandwidth].min.to_s << "\n"
+          # reliability_str << link.start_node.to_s << " " << link.end_node.to_s << " " << sprintf("%.4f", exp(-1 * link.failure_rate * traffic_item.holding_time)) << "\n"
+          bandwidth_max = [link.bandwidth, bandwidth_max].max
+        end
+      }
+    }
+    data_file.puts("param C_MAX := " << bandwidth_max.to_s << " ;")
+    data_file.puts("param : E : d :=")
+    data_file.print(distance_str)
+    data_file.puts(";")
+    data_file.puts("param : c :=")
+    data_file.print(bandwidth_str)
+# data_file.puts(";")
+# data_file.puts("param : R :=")
+# data_file.print(reliability_str)
+    data_file.puts(";\n")
+    data_file.close
+    glpk_path = GLPK_PATH + (" -m routing_mincostflow_ver2.mod -o " << OUTPUT_FILE << " -d " << DATA_FILE << " --wlpt " << CPLEX_LP << " --check")
+    o, e, s = Open3.capture3(glpk_path)
+    if o.match(/^Model has been successfully generated$/) != nil
+      cplex_path = CPLEX_PATH + (" < " << CPLEX_SCRIPT)
+      o2, e2, s2 = Open3.capture3(cplex_path)
+      if o2.match(/Integer optimal/) != nil
+        if (match = o2.match(/Objective\s+=\s+([\d\.]+)e\+(\d+)/))== nil
+          puts "No Objective"
+          exit
+        end
+        cost = (match[1].to_f * (10 ** match[2].to_i)).to_i
+        cost_greedy += cost
+        puts cost.to_s
+        #最適解発見
+        route=Array.new(MAX_ROUTE).map! { Array.new }
+        o2.scan(/^y\((\d+),(\d+),(\d+)\)\s+(\d+\.\d+)/) do |route_num, start_node, end_node, volume|
+          if link_list[start_node.to_i - 1][end_node.to_i - 1] != nil
+            if volume.to_i > 0
+              route[route_num.to_i - 1] << Link.new(start_node.to_i, end_node.to_i, link_list[start_node.to_i - 1][end_node.to_i - 1].distance, volume.to_i, link_list[start_node.to_i - 1][end_node.to_i - 1].failure_rate, 0)
+            end
+          else
+            write_log(sprintf("[Error-MinCostFlowGreedy] link %d->%d not found\n", start_node.to_i, end_node.to_i))
+          end
+        end
+        write_log(sprintf("[Accepted-MinCostFlowGreedy(%d-%d)] %d->%d (%d, %f) Cost: %d\n", i, j, traffic_item.start_node, traffic_item.end_node, bandwidth, traffic_item.quality, cost))
+        # ルート使用処理
+        route_cnt = 0
+        route.each { |route_item|
+          if route_item != nil && route_item.size > 0
+            route_cnt = route_cnt.succ
+            write_log(route_item[0].bandwidth.to_s + ": ")
+            route_reliability = 1
+            route_item.each { |link|
+              write_log(sprintf("(%d->%d), ", link.start_node, link.end_node))
+              route_reliability *= exp(-1 * link.failure_rate * traffic_item.holding_time).round(4)
+              if link_greedy[link.start_node-1][link.end_node-1].bandwidth > traffic_item.bandwidth
+                link_greedy[link.start_node-1][link.end_node-1].bandwidth = traffic_item.bandwidth - link.bandwidth
+              else
+                link_greedy[link.start_node-1][link.end_node-1].bandwidth -= link.bandwidth
+              end
+            }
+            write_log("\n")
+            write_log(show_links(link_greedy))
+            expected_bandwidth += route_reliability * route_item[0].bandwidth
+          end
+        }
+        total_expected_bandwidth += expected_bandwidth
+        write_log(sprintf("[ExpectedBandwidth-MinCostFlowGreedy(%d-%d)] Total:%f Current:%f\n", i, j, total_expected_bandwidth, expected_bandwidth.to_s))
+        if total_expected_bandwidth >= traffic_item.quality * traffic_item.bandwidth
+          break
+        end
+      else
+        #最適解なし
+        puts "Blocked"
+        write_log(sprintf("[Blocked-MinCostFlowGreedy(%d-%d)] %d->%d (%d, %f)\n", i, j, traffic_item.start_node, traffic_item.end_node, bandwidth, traffic_item.quality))
+        exit
+      end
+    else
+      #   モデル異常
+      puts 'Model Error'
+      puts o
+      exit
+    end
+    j +=1
+  end
+  write_log(sprintf("[FinalCost-MinCostFlowGreedy(%d-%d)] Cost: %d\n", i, j, cost_greedy))
+  cost_mincostflow_greedy_total += cost_greedy
 end
+
 
 # シミュレーション終了
 result_file = File.open(RESULT_FILE, "a")
 result_file.print("\n")
 result_file.print("Propose\n")
 result_file.print(sprintf("Cost_Average:%d\n", cost_propose_total/COUNT))
-result_file.print("minCostFlow\n")
+result_file.print("minCostFlowRepeat\n")
 result_file.print(sprintf("Cost_Average:%d\n", cost_mincostflow_total/COUNT))
+result_file.print("minCostFlowGreedy\n")
+result_file.print(sprintf("Cost_Average:%d\n", cost_mincostflow_greedy_total/COUNT))
 result_file.print("\n")
 result_file.close
